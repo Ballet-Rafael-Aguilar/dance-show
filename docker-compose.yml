@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  playground:
+    image: balletrafaelaguilar/dance-show-playground:$VERSION
+    build: .
+    ports:
+      - "4000:4000"
+    container_name: playground
+
+
+
+
