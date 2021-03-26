@@ -1,34 +1,26 @@
 {
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "ballet",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "dance-show": {
-      "tags": []
-    },
-    "dance-show-e2e": {
-      "tags": [],
-      "implicitDependencies": ["dance-show"]
-    }
+    "dance-show": { "tags": [] },
+    "dance-show-e2e": { "tags": [], "implicitDependencies": ["dance-show"] },
+    "material": { "tags": [] },
+    "bulma": { "tags": [] },
+    "playground": { "tags": [] },
+    "playground-e2e": { "tags": [], "implicitDependencies": ["playground"] }
   }
 }

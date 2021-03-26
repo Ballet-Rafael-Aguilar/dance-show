@@ -1,3 +1,8 @@
 module.exports = {
-  projects: ['<rootDir>/apps/dance-show'],
+  projects: [
+    '<rootDir>/apps/dance-show',
+    '<rootDir>/libs/material',
+    '<rootDir>/libs/bulma',
+    '<rootDir>/apps/playground',
+  ],
 };
