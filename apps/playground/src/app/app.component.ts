@@ -9,6 +9,6 @@ export class AppComponent {
   title = 'playground';
   name = 'User';
   constructor() {
-    console.log('Doing something else');
+    console.log('Doing something more');
   }
 }
