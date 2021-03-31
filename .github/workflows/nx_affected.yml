@@ -1,7 +1,17 @@
 name: Nx Affected CI
 on:
+  push:
+    branches:
+      - main
+      - development
+    tags:
+      - 'v*'
+      -
   pull_request:
-    branches: [main]
+    branches:
+      - main
+      - development
+
 jobs:
   build:
     runs-on: ubuntu-latest
