@@ -10,5 +10,6 @@ export class AppComponent {
   name = 'User';
   constructor() {
     console.log('Doing something more');
+    console.log('Doing something else');
   }
 }
