@@ -282,8 +282,18 @@
             "jestConfig": "apps/playground/jest.config.js",
             "passWithNoTests": true
           }
-        }
-      }
+        },
+        "deploy": {
+                    "builder": "@nrwl/workspace:run-commands",
+                  "options": {
+                      "commands": [
+                        "nx build playground",
+                        "docker build -f ./apps/playground/Dockerfile . -t playground"
+                    ],
+                    "parallel": false
+                  }
+              }
+  }
     },
     "playground-e2e": {
       "root": "apps/playground-e2e",
