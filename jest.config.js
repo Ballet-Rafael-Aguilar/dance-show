@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/libs/material',
     '<rootDir>/libs/bulma',
     '<rootDir>/apps/playground',
+    '<rootDir>/apps/user-service',
   ],
 };

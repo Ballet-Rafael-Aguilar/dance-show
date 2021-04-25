@@ -21,6 +21,7 @@
     "material": { "tags": [] },
     "bulma": { "tags": [] },
     "playground": { "tags": [] },
-    "playground-e2e": { "tags": [], "implicitDependencies": ["playground"] }
+    "playground-e2e": { "tags": [], "implicitDependencies": ["playground"] },
+    "user-service": { "tags": [] }
   }
 }
