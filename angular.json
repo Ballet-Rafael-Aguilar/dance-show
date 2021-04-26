@@ -284,15 +284,15 @@
           }
         },
         "deploy": {
-                    "builder": "@nrwl/workspace:run-commands",
-                  "options": {
-                      "commands": [
-                        "nx build playground",
-                        "docker build -f ./apps/playground/Dockerfile . -t playground"
-                    ],
-                    "parallel": false
-                  }
-              }
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx build playground",
+              "docker build -f ./apps/playground/Dockerfile . -t playground"
+            ],
+            "parallel": false
+          }
+        }
   }
     },
     "playground-e2e": {
