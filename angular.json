@@ -288,7 +288,7 @@
           "options": {
             "commands": [
               "nx build playground",
-              "docker build -f ./apps/playground/Dockerfile . -t playground"
+              "docker build -f ./apps/playground/Dockerfile . -t balletrafaelaguilar/dance-show-playground:2.0.0"
             ],
             "parallel": false
           }
