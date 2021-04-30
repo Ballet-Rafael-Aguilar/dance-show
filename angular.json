@@ -288,7 +288,7 @@
           "options": {
             "commands": [
               "nx build playground",
-              "docker build -f ./apps/playground/Dockerfile . -t balletrafaelaguilar/dance-show-playground:2.0.0"
+              "docker build -f ./apps/playground/Dockerfile . -t balletrafaelaguilar/dance-show-playground:1.0.0"
             ],
             "parallel": false
           }
@@ -333,7 +333,8 @@
             "outputPath": "dist/apps/user-service",
             "main": "apps/user-service/src/main.ts",
             "tsConfig": "apps/user-service/tsconfig.app.json",
-            "assets": ["apps/user-service/src/assets"]
+            "assets": ["apps/user-service/src/assets"],
+            "generatePackageJson": true
           },
           "configurations": {
             "production": {
@@ -367,6 +368,16 @@
           "options": {
             "jestConfig": "apps/user-service/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx build user-service",
+              "docker build -f ./apps/user-service/Dockerfile . -t balletrafaelaguilar/user-service:1.0.0"
+            ],
+            "parallel": false
           }
         }
       }
