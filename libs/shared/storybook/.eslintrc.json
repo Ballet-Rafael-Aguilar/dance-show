@@ -1,5 +1,5 @@
 {
-  "extends": ["../../.eslintrc.json"],
+  "extends": ["../../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
@@ -10,8 +10,8 @@
       ],
       "parserOptions": {
         "project": [
-          "libs/material/tsconfig.*?.json",
-          "libs/material/.storybook/tsconfig.json"
+          "libs/shared/storybook/tsconfig.*?.json",
+          "libs/shared/storybook/.storybook/tsconfig.json"
         ]
       },
       "rules": {

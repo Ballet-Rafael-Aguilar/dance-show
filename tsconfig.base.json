@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@ballet/material": ["libs/material/src/index.ts"],
-      "@ballet/bulma": ["libs/bulma/src/index.ts"]
+      "@ballet/bulma": ["libs/bulma/src/index.ts"],
+      "@ballet/shared/storybook": ["libs/shared/storybook/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

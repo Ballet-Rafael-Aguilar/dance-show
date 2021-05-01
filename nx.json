@@ -12,7 +12,15 @@
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
+      }
     }
   },
   "projects": {
@@ -22,6 +30,9 @@
     "bulma": { "tags": [] },
     "playground": { "tags": [] },
     "playground-e2e": { "tags": [], "implicitDependencies": ["playground"] },
-    "user-service": { "tags": [] }
+    "user-service": { "tags": [] },
+    "shared-storybook": { "tags": [] },
+    "bulma-e2e": { "tags": [], "implicitDependencies": ["bulma"] },
+    "material-e2e": { "tags": [], "implicitDependencies": ["material"] }
   }
 }
