@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/apps/playground',
     '<rootDir>/apps/user-service',
     '<rootDir>/libs/shared/storybook',
+    '<rootDir>/libs/shared/theme',
   ],
 };

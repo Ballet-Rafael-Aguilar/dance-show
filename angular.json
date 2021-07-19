@@ -278,6 +278,11 @@
               "apps/playground/src/favicon.ico",
               "apps/playground/src/assets"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "libs/shared/theme/assets"
+              ]
+            },
             "styles": ["apps/playground/src/styles.scss"],
             "scripts": []
           },
@@ -548,6 +553,31 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/material-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "shared-theme": {
+      "projectType": "library",
+      "root": "libs/shared/theme",
+      "sourceRoot": "libs/shared/theme/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/theme/src/**/*.ts",
+              "libs/shared/theme/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/theme"],
+          "options": {
+            "jestConfig": "libs/shared/theme/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

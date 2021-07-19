@@ -33,6 +33,7 @@
     "user-service": { "tags": [] },
     "shared-storybook": { "tags": [] },
     "bulma-e2e": { "tags": [], "implicitDependencies": ["bulma"] },
-    "material-e2e": { "tags": [], "implicitDependencies": ["material"] }
+    "material-e2e": { "tags": [], "implicitDependencies": ["material"] },
+    "shared-theme": { "tags": ["type:assets"] }
   }
 }

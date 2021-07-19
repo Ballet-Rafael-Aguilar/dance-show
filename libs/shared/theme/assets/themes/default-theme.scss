@@ -1,0 +1,179 @@
+@import '~@angular/material/theming';
+@import 'libs/material/assets/lib-theme';
+
+@include mat-core();
+
+$font-family-base: 'Roboto', Helvetica, Arial, sans-serif;
+$font-family-header: "Nunito", Arial, sans-serif;
+$font-family-condensed: "Roboto Condensed", Arial, sans-serif;
+$cc-mat-typography: mat-typography-config(
+  $font-family: $font-family-base,
+  $display-4: mat-typography-level(16px, 32px, 500, $font-family-header),
+  $display-3: mat-typography-level(20px, 36px, 500, $font-family-header),
+  $display-2: mat-typography-level(30px, 48px, 400, $font-family-header),
+  $display-1: mat-typography-level(26px, 40px, 400, $font-family-header),
+  $subheading-2: mat-typography-level(20px, 1.2, 400, $font-family-header),
+  $subheading-1: mat-typography-level(16px, 1.2, 400, $font-family-header),
+  $body-2: mat-typography-level(15px, 20px, 700, $font-family-condensed),
+  $body-1: mat-typography-level(15px, 20px, 400, $font-family-condensed),
+  $caption: mat-typography-level(13px, 20px, 400, $font-family-condensed)
+);
+
+$cc-typography: (
+  display-6: mat-typography-level(60px, 48px, 600, $font-family-header),
+  display-5: mat-typography-level(50px, 48px, 600, $font-family-header),
+  info-text-big: mat-typography-level(18px, 20px, 400, $font-family-base),
+  info-text: mat-typography-level(16px, 20px, 400, $font-family-base),
+  info-text-small: mat-typography-level(14px, 20px, 400, $font-family-base),
+  sidenav-title: mat-typography-level(18px, 1, 800, $font-family-base),
+  sidenav-subtitle: mat-typography-level(12px, 40px, 400, $font-family-base),
+  sidenav-menu: mat-typography-level(16px, 20px, 400, $font-family-condensed),
+  sidenav-menu-strong: mat-typography-level(16px, 32px, 800, $font-family-condensed),
+  detail-header: mat-typography-level(13px, 20px, 700, $font-family-condensed),
+  detail-caption: mat-typography-level(15px, 20px, 400, $font-family-base)
+);
+
+.default-theme {
+  // Green
+  $mat-cc-primary: (
+    50 : #e9f5f5,
+    100 : #c7e6e5,
+    200 : #a2d6d4,
+    300 : #7dc6c2,
+    400 : #00bfa5,
+    500 : #45ada8,
+    600 : #3ea6a0,
+    700 : #369c97,
+    800 : #2e938d,
+    900 : #1f837d,
+    A100 : #bffffa,
+    A200 : #8cfff7,
+    A400 : #59fff3,
+    A700 : #40fff1,
+    contrast: (
+      50 : $dark-primary-text,
+      100 : #3b363c,
+      150 : #4a4a4a,
+      200 : #908F8F,
+      300 : #8f8e8e,
+      400 : #747373,
+      500 : $light-primary-text,
+      600 : #635F63,
+      700 : #3b363c,
+      800 : #B8B8B8,
+      900 : $light-primary-text,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+      A800 : #0000008A,
+    )
+  );
+
+  // Yellow
+  $mat-cc-accent: (
+    50 : #fff8e0,
+    100 : #feeeb3,
+    200 : #fee380,
+    300 : #fed74d,
+    400 : #b68e00,
+    500 : #fdc600,
+    600 : #fdc000,
+    700 : #fcb900,
+    800 : #fcb100,
+    900 : #fca400,
+    A100 : #ffffff,
+    A200 : #fff9ef,
+    A400 : #ffe5bc,
+    A700 : #ffdba2,
+    contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #000000,
+      800 : #000000,
+      900 : #000000,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+    )
+  );
+
+  $mat-cc-warn: (
+    50: #ffebee,
+    100: #ffcdd2,
+    200: #ef9a9a,
+    300: #e57373,
+    400: #ef5350,
+    500: #f44336,
+    600: #e53935,
+    700: #d32f2f,
+    800: #c62828,
+    900: #b71c1c,
+    A100: #ff8a80,
+    A200: #ff5252,
+    A400: #ff1744,
+    A700: #d50000,
+    contrast: (
+      50: $dark-primary-text,
+      100: $dark-primary-text,
+      200: $dark-primary-text,
+      300: $dark-primary-text,
+      400: $dark-primary-text,
+      500: $light-primary-text,
+      600: $light-primary-text,
+      700: $light-primary-text,
+      800: $light-primary-text,
+      900: $light-primary-text,
+      A100: $dark-primary-text,
+      A200: $light-primary-text,
+      A400: $light-primary-text,
+      A700: $light-primary-text,
+    )
+  );
+
+  $cc-background: (
+    background: white,
+    appbar: white,
+    toolbar: white,
+    footer: #2A252A,
+    striped: #F5F5F4,
+    shadow: #eeeeee,
+    info: #f5f5f4,
+    success: #defffa,
+    error: #fff5f5,
+    warning: #fff6d4,
+  );
+
+  $cc-foreground: (
+    divider: #3b363c,
+    text: #3b363c
+  );
+
+  $cc-primary: mat-palette($mat-cc-primary, 500);
+  $cc-accent: mat-palette($mat-cc-accent, 500);
+  $cc-warn: mat-palette($mat-cc-warn, A200);
+
+  $cc-theme: mat-light-theme($cc-primary, $cc-accent, $cc-warn);
+
+  $background: map-get($cc-theme, background);
+  $background: map_merge($background, $cc-background);
+  $cc-theme: map_merge($cc-theme, (background: $background));
+
+  $cc-typography: map_merge($cc-typography, $cc-mat-typography);
+  $cc-theme: map_merge($cc-theme, (typography: $cc-typography));
+
+  $foreground: map-get($cc-theme, foreground);
+  $foreground: map_merge($foreground, $cc-foreground);
+  $cc-theme: map_merge($cc-theme, (foreground: $foreground));
+
+  @include lib-theme($cc-theme);
+  @include angular-material-theme($cc-theme);
+}
+
+

@@ -1,0 +1,29 @@
+@import '~@angular/material/theming';
+
+@mixin custom-components-theme($theme) {
+  @include app-color-theme($theme);
+}
+
+@mixin app-color-theme($config-or-theme) {
+  $config: mat-get-color-config($config-or-theme);
+  $primary: map-get($config, primary);
+  $accent: map-get($config, accent);
+}
+
+@mixin app-typography($config-or-theme) {
+  @include mat-core($config-or-theme);
+
+  $config: mat-get-typography-config($config-or-theme);
+}
+
+@mixin lib-theme($theme) {
+  $color: mat-get-color-config($theme);
+  $typography: mat-get-typography-config($theme);
+
+  @if $color != null {
+    @include custom-components-theme($color);
+  }
+  @if $typography != null {
+    @include app-typography($typography);
+  }
+}
