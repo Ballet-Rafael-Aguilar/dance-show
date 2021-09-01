@@ -417,14 +417,18 @@
       }
     },
     "catalog": {
+      "projectType": "library",
       "root": "libs/catalog",
       "sourceRoot": "libs/catalog/src",
-      "projectType": "library",
+      "prefix": "cat",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/catalog/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/rest/src/**/*.ts",
+              "libs/rest/src/**/*.html"
+            ]
           }
         },
         "test": {
