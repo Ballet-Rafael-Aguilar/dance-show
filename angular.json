@@ -223,9 +223,7 @@
               "apps/playground/src/assets"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "libs/shared/theme/assets"
-              ]
+              "includePaths": ["libs/shared/theme/assets"]
             },
             "styles": ["apps/playground/src/styles.scss"],
             "scripts": []
@@ -469,6 +467,27 @@
           "outputs": ["coverage/libs/shared/theme"],
           "options": {
             "jestConfig": "libs/shared/theme/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "catalog": {
+      "root": "libs/catalog",
+      "sourceRoot": "libs/catalog/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/catalog/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/catalog"],
+          "options": {
+            "jestConfig": "libs/catalog/jest.config.js",
             "passWithNoTests": true
           }
         }

@@ -1,6 +1,10 @@
 <div [ngClass]="selectedTheme$ | async">
-  <h1>Welcome to {{ title }}!</h1>
-  <h1>{{name}}</h1>
-  <router-outlet></router-outlet>
+  <cat-toolbar>
+    <cat-button></cat-button>
+    <h1>Welcome to {{ title }}!</h1>
+    <h1>{{name}}</h1>
+    <h1>{{message}}</h1>
+    <router-outlet></router-outlet>
+  </cat-toolbar>
 </div>
 

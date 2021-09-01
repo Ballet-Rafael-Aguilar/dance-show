@@ -31,6 +31,7 @@
     "playground-e2e": { "tags": [], "implicitDependencies": ["playground"] },
     "user-service": { "tags": [] },
     "shared-storybook": { "tags": [] },
-    "shared-theme": { "tags": ["type:assets"] }
+    "shared-theme": { "tags": ["type:assets"] },
+    "catalog": { "tags": ["type:lib"] }
   }
 }

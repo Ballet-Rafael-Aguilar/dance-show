@@ -7,5 +7,6 @@ module.exports = {
     '<rootDir>/apps/user-service',
     '<rootDir>/libs/shared/storybook',
     '<rootDir>/libs/shared/theme',
+    '<rootDir>/libs/catalog',
   ],
 };
