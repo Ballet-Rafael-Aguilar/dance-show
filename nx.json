@@ -26,7 +26,6 @@
   "projects": {
     "dance-show": { "tags": [] },
     "dance-show-e2e": { "tags": [], "implicitDependencies": ["dance-show"] },
-    "material": { "tags": [] },
     "playground": { "tags": [] },
     "playground-e2e": { "tags": [], "implicitDependencies": ["playground"] },
     "user-service": { "tags": [] },
