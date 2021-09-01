@@ -27,7 +27,6 @@
     "dance-show": { "tags": [] },
     "dance-show-e2e": { "tags": [], "implicitDependencies": ["dance-show"] },
     "material": { "tags": [] },
-    "bulma": { "tags": [] },
     "playground": { "tags": [] },
     "playground-e2e": { "tags": [], "implicitDependencies": ["playground"] },
     "user-service": { "tags": [] },

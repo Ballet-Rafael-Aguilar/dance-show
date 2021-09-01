@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from './shared/service/rest/user.service';
-import { Subscription, Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { ThemingService } from '../../../../libs/shared/theme/src/lib/theming.service';
 
 @Component({

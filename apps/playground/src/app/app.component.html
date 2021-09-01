@@ -1,11 +1,6 @@
 <div [ngClass]="selectedTheme$ | async">
-  <ballet-mat-toolbar>
-    <ballet-bulma-button></ballet-bulma-button>
-    <ballet-mat-button></ballet-mat-button>
-    <h1>Welcome to {{ title }}!</h1>
-    <h1>{{name}}</h1>
-    <h1>{{message}}</h1>
-    <router-outlet></router-outlet>
-  </ballet-mat-toolbar>
+  <h1>Welcome to {{ title }}!</h1>
+  <h1>{{name}}</h1>
+  <router-outlet></router-outlet>
 </div>
 
