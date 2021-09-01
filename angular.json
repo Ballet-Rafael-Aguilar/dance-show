@@ -465,6 +465,31 @@
           }
         }
       }
+    },
+    "shared-iu": {
+      "projectType": "library",
+      "root": "libs/shared/iu",
+      "sourceRoot": "libs/shared/iu/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/iu/src/**/*.ts",
+              "libs/shared/iu/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/iu"],
+          "options": {
+            "jestConfig": "libs/shared/iu/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

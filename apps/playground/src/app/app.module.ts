@@ -5,13 +5,13 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
-import { CatalogModule } from 'ballet/catalog';
+import { SharedIuModule } from '@ballet/shared/iu';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     HttpClientModule,
-    CatalogModule,
+    SharedIuModule,
     SharedModule,
     BrowserModule,
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),

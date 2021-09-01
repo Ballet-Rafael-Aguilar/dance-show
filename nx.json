@@ -24,14 +24,15 @@
     }
   },
   "projects": {
-    "dance-show": { "tags": [] },
-    "dance-show-e2e": { "tags": [], "implicitDependencies": ["dance-show"] },
-    "playground": { "tags": [] },
-    "playground-e2e": { "tags": [], "implicitDependencies": ["playground"] },
-    "user-service": { "tags": [] },
-    "shared-storybook": { "tags": [] },
+    "dance-show": { "tags": ["type:app"] },
+    "dance-show-e2e": { "tags": ["type:e2e"], "implicitDependencies": ["dance-show"] },
+    "playground": { "tags": ["type:app"] },
+    "playground-e2e": { "tags": ["type:e2e"], "implicitDependencies": ["playground"] },
+    "user-service": { "tags": ["type:backend"] },
+    "shared-storybook": { "tags": ["type:story"] },
     "shared-theme": { "tags": ["type:assets"] },
     "catalog": { "tags": ["type:lib"] },
-    "rest": { "tags": ["type:lib"] }
+    "rest": { "tags": ["type:lib"] },
+    "shared-iu": { "tags": ["type:ui"] }
   }
 }

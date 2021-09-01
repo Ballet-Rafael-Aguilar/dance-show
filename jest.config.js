@@ -9,5 +9,6 @@ module.exports = {
     '<rootDir>/libs/shared/theme',
     '<rootDir>/libs/catalog',
     '<rootDir>/libs/rest',
+    '<rootDir>/libs/shared/iu',
   ],
 };
