@@ -31,6 +31,7 @@
     "user-service": { "tags": [] },
     "shared-storybook": { "tags": [] },
     "shared-theme": { "tags": ["type:assets"] },
-    "catalog": { "tags": ["type:lib"] }
+    "catalog": { "tags": ["type:lib"] },
+    "rest": { "tags": [] }
   }
 }

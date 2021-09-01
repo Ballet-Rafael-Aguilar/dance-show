@@ -436,6 +436,31 @@
           }
         }
       }
+    },
+    "rest": {
+      "projectType": "library",
+      "root": "libs/rest",
+      "sourceRoot": "libs/rest/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/rest/src/**/*.ts",
+              "libs/rest/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/rest"],
+          "options": {
+            "jestConfig": "libs/rest/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
