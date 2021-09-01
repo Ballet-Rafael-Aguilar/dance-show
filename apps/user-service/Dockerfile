@@ -8,6 +8,4 @@ FROM node:lts-alpine
 WORKDIR /app
 COPY --from=builder /app ./
 RUN npm install reflect-metadata tslib rxjs @nestjs/platform-express
-RUN echo $(pwd)
-RUN echo $(ls)
 CMD node ./main.js
