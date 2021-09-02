@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MoleculesModule } from '@ballet/molecules';
+import { LayoutBaseComponent } from './layout/layout-base/layout-base.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   imports: [
     MoleculesModule,
-    BrowserAnimationsModule,
+    RouterModule
   ],
-  exports: [MoleculesModule]
+  declarations: [LayoutBaseComponent],
+  exports: [MoleculesModule, LayoutBaseComponent, RouterModule]
 })
 export class CatalogModule {}

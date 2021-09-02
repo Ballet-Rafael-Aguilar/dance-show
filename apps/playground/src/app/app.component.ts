@@ -1,6 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UserService } from './shared/service/rest/user.service';
-import { Observable, Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ThemingService } from '../../../../libs/shared/theme/src/lib/theming.service';
 
 @Component({
@@ -8,24 +7,12 @@ import { ThemingService } from '../../../../libs/shared/theme/src/lib/theming.se
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
-  title = 'playground';
-  name = 'User';
-  message: string;
-  userSub: Subscription;
+export class AppComponent implements OnInit {
   selectedTheme$: Observable<string>;
 
-  constructor(private userService: UserService, private themingService: ThemingService) {
-    this.userService.getUsers().subscribe(response => {
-      this.message = response.message;
-    });
-  }
+  constructor(private themingService: ThemingService) {}
 
   ngOnInit(): void {
     this.selectedTheme$ = this.themingService.selected;
-  }
-
-  ngOnDestroy(): void {
-    this.userSub.unsubscribe();
   }
 }

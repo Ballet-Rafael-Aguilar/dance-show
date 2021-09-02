@@ -1,10 +1,4 @@
 <div [ngClass]="selectedTheme$ | async">
-  <ballet-toolbar>
-    <ballet-button></ballet-button>
-    <h1>Welcome to {{ title }}!</h1>
-    <h1>{{name}}</h1>
-    <h1>{{message}}</h1>
-    <router-outlet></router-outlet>
-  </ballet-toolbar>
+  <router-outlet></router-outlet>
 </div>
 
