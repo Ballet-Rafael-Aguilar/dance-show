@@ -420,7 +420,7 @@
       "projectType": "library",
       "root": "libs/catalog",
       "sourceRoot": "libs/catalog/src",
-      "prefix": "cat",
+      "prefix": "ballet",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
@@ -486,6 +486,31 @@
           "outputs": ["coverage/libs/shared/iu"],
           "options": {
             "jestConfig": "libs/shared/iu/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "interface": {
+      "projectType": "library",
+      "root": "libs/interface",
+      "sourceRoot": "libs/interface/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/interface/src/**/*.ts",
+              "libs/interface/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/interface"],
+          "options": {
+            "jestConfig": "libs/interface/jest.config.js",
             "passWithNoTests": true
           }
         }

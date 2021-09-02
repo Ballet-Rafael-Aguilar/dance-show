@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MatButtonComponent } from './mat-button.component';
+import { BalletButtonComponent } from './ballet-button.component';
 
 describe('BulmaButtonComponent', () => {
-  let component: MatButtonComponent;
-  let fixture: ComponentFixture<MatButtonComponent>;
+  let component: BalletButtonComponent;
+  let fixture: ComponentFixture<BalletButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MatButtonComponent ]
+      declarations: [ BalletButtonComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MatButtonComponent);
+    fixture = TestBed.createComponent(BalletButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

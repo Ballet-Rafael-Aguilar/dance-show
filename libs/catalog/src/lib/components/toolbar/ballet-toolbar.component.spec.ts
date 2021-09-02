@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatToolbarComponent } from './mat-toolbar.component';
+import { BalletToolbarComponent } from './ballet-toolbar.component';
 
 
 describe('BulmaButtonComponent', () => {
-  let component: MatToolbarComponent;
-  let fixture: ComponentFixture<MatToolbarComponent>;
+  let component: BalletToolbarComponent;
+  let fixture: ComponentFixture<BalletToolbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MatToolbarComponent ]
+      declarations: [ BalletToolbarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MatToolbarComponent);
+    fixture = TestBed.createComponent(BalletToolbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

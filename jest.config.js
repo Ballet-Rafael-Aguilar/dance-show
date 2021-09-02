@@ -10,5 +10,6 @@ module.exports = {
     '<rootDir>/libs/catalog',
     '<rootDir>/libs/rest',
     '<rootDir>/libs/shared/iu',
+    '<rootDir>/libs/interface',
   ],
 };

@@ -1,4 +1,4 @@
-import { MatToolbarComponent } from './mat-toolbar.component';
+import { BalletToolbarComponent } from './ballet-toolbar.component';
 import { CatalogModule } from '../../catalog.module';
 
 export default {
@@ -9,7 +9,7 @@ export const primary = () => ({
   moduleMetadata: {
     imports: [CatalogModule]
   },
-  component: MatToolbarComponent,
+  component: BalletToolbarComponent,
   props: {
     config: { toggleMenu: () => {} },
   }
