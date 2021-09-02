@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { UserService } from '../../shared/service/rest/user.service';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'ballet-home',
@@ -8,14 +8,11 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnDestroy {
-  message = 'Default';
-
   userSub: Subscription;
+  message$: Observable<{message}>;
 
   constructor(private userService: UserService) {
-    this.userSub = this.userService.getUsers().subscribe(response => {
-      this.message = response.message;
-    });
+    this.message$ = this.userService.getUsers();
   }
 
   ngOnDestroy(): void {

@@ -6,6 +6,7 @@ import { SharedModule } from './shared/shared.module';
 import { SharedIuModule } from '@ballet/shared/iu';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { interceptors } from '@ballet/rest';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [interceptors],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

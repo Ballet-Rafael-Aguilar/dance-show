@@ -13,7 +13,7 @@ export class UserService {
   }
 
   getUsers(): Observable<{ message }> {
-    return  this.http.get<{ message }>(this.url)
+    return this.http.get<{ message }>(this.url)
       .pipe(
         map(response => response ? response : null),
         catchError(error => {console.log(error); throw(error);}),
