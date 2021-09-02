@@ -33,6 +33,60 @@
     }
   },
   "projects": {
+    "atoms": {
+      "projectType": "library",
+      "root": "libs/atoms",
+      "sourceRoot": "libs/atoms/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/atoms/src/**/*.ts",
+              "libs/atoms/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/atoms"
+          ],
+          "options": {
+            "jestConfig": "libs/atoms/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "catalog": {
+      "projectType": "library",
+      "root": "libs/catalog",
+      "sourceRoot": "libs/catalog/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/rest/src/**/*.ts",
+              "libs/rest/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/catalog"
+          ],
+          "options": {
+            "jestConfig": "libs/catalog/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "dance-show": {
       "projectType": "application",
       "root": "apps/dance-show",
@@ -47,13 +101,20 @@
             "main": "apps/dance-show/src/main.ts",
             "polyfills": "apps/dance-show/src/polyfills.ts",
             "tsConfig": "apps/dance-show/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "apps/dance-show/src/favicon.ico",
               "apps/dance-show/src/assets"
             ],
-            "styles": ["apps/dance-show/src/styles.scss"],
-            "scripts": []
+            "styles": [
+              "apps/dance-show/src/styles.scss"
+            ],
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -83,7 +144,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -113,7 +175,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/dance-show"],
+          "outputs": [
+            "coverage/apps/dance-show"
+          ],
           "options": {
             "jestConfig": "apps/dance-show/jest.config.js",
             "passWithNoTests": true
@@ -142,7 +206,90 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/dance-show-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/dance-show-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "interface": {
+      "projectType": "library",
+      "root": "libs/interface",
+      "sourceRoot": "libs/interface/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/interface/src/**/*.ts",
+              "libs/interface/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/interface"
+          ],
+          "options": {
+            "jestConfig": "libs/interface/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "material": {
+      "projectType": "library",
+      "root": "libs/material",
+      "sourceRoot": "libs/material/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/material/src/**/*.ts",
+              "libs/material/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/material"
+          ],
+          "options": {
+            "jestConfig": "libs/material/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "molecules": {
+      "projectType": "library",
+      "root": "libs/molecules",
+      "sourceRoot": "libs/molecules/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/molecules/src/**/*.ts",
+              "libs/molecules/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/molecules"
+          ],
+          "options": {
+            "jestConfig": "libs/molecules/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
@@ -161,16 +308,25 @@
             "main": "apps/playground/src/main.ts",
             "polyfills": "apps/playground/src/polyfills.ts",
             "tsConfig": "apps/playground/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "apps/playground/src/favicon.ico",
               "apps/playground/src/assets"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["libs/shared/theme/assets"]
+              "includePaths": [
+                "libs/shared/theme/assets"
+              ]
             },
-            "styles": ["apps/playground/src/styles.scss"],
-            "scripts": []
+            "styles": [
+              "apps/playground/src/styles.scss"
+            ],
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -200,7 +356,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -230,7 +387,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/playground"],
+          "outputs": [
+            "coverage/apps/playground"
+          ],
           "options": {
             "jestConfig": "apps/playground/jest.config.js",
             "passWithNoTests": true
@@ -269,68 +428,63 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/playground-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/playground-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
     },
-    "user-service": {
-      "root": "apps/user-service",
-      "sourceRoot": "apps/user-service/src",
-      "projectType": "application",
+    "rest": {
+      "projectType": "library",
+      "root": "libs/rest",
+      "sourceRoot": "libs/rest/src",
+      "prefix": "ballet",
       "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
-          "options": {
-            "outputPath": "dist/apps/user-service",
-            "main": "apps/user-service/src/main.ts",
-            "tsConfig": "apps/user-service/tsconfig.app.json",
-            "assets": ["apps/user-service/src/assets"],
-            "generatePackageJson": true
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/user-service/src/environments/environment.ts",
-                  "with": "apps/user-service/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "user-service:build"
-          }
-        },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/user-service/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/rest/src/**/*.ts",
+              "libs/rest/src/**/*.html"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/user-service"],
+          "outputs": [
+            "coverage/libs/rest"
+          ],
           "options": {
-            "jestConfig": "apps/user-service/jest.config.js",
+            "jestConfig": "libs/rest/jest.config.js",
             "passWithNoTests": true
           }
-        },
-        "deploy": {
-          "builder": "@nrwl/workspace:run-commands",
+        }
+      }
+    },
+    "shared-iu": {
+      "projectType": "library",
+      "root": "libs/shared/iu",
+      "sourceRoot": "libs/shared/iu/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "commands": [
-              "nx build user-service",
-              "docker build -f ./apps/user-service/Dockerfile . -t balletrafaelaguilar/user-service:1.0.0"
-            ],
-            "parallel": false
+            "lintFilePatterns": [
+              "libs/shared/iu/src/**/*.ts",
+              "libs/shared/iu/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/iu"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/iu/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
@@ -352,7 +506,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/storybook"],
+          "outputs": [
+            "coverage/libs/shared/storybook"
+          ],
           "options": {
             "jestConfig": "libs/shared/storybook/jest.config.js",
             "passWithNoTests": true
@@ -375,7 +531,9 @@
         },
         "build-storybook": {
           "builder": "@nrwl/storybook:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "uiFramework": "@storybook/angular",
             "outputPath": "dist/storybook/shared-storybook",
@@ -408,7 +566,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/theme"],
+          "outputs": [
+            "coverage/libs/shared/theme"
+          ],
           "options": {
             "jestConfig": "libs/shared/theme/jest.config.js",
             "passWithNoTests": true
@@ -416,177 +576,71 @@
         }
       }
     },
-    "catalog": {
-      "projectType": "library",
-      "root": "libs/catalog",
-      "sourceRoot": "libs/catalog/src",
-      "prefix": "ballet",
+    "user-service": {
+      "root": "apps/user-service",
+      "sourceRoot": "apps/user-service/src",
+      "projectType": "application",
       "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/user-service",
+            "main": "apps/user-service/src/main.ts",
+            "tsConfig": "apps/user-service/tsconfig.app.json",
+            "assets": [
+              "apps/user-service/src/assets"
+            ],
+            "generatePackageJson": true
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/user-service/src/environments/environment.ts",
+                  "with": "apps/user-service/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "user-service:build"
+          }
+        },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/rest/src/**/*.ts",
-              "libs/rest/src/**/*.html"
+              "apps/user-service/**/*.ts"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/catalog"],
+          "outputs": [
+            "coverage/apps/user-service"
+          ],
           "options": {
-            "jestConfig": "libs/catalog/jest.config.js",
+            "jestConfig": "apps/user-service/jest.config.js",
             "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "rest": {
-      "projectType": "library",
-      "root": "libs/rest",
-      "sourceRoot": "libs/rest/src",
-      "prefix": "ballet",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/rest/src/**/*.ts",
-              "libs/rest/src/**/*.html"
-            ]
           }
         },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/rest"],
+        "deploy": {
+          "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "jestConfig": "libs/rest/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "shared-iu": {
-      "projectType": "library",
-      "root": "libs/shared/iu",
-      "sourceRoot": "libs/shared/iu/src",
-      "prefix": "ballet",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/iu/src/**/*.ts",
-              "libs/shared/iu/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/iu"],
-          "options": {
-            "jestConfig": "libs/shared/iu/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "interface": {
-      "projectType": "library",
-      "root": "libs/interface",
-      "sourceRoot": "libs/interface/src",
-      "prefix": "ballet",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/interface/src/**/*.ts",
-              "libs/interface/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/interface"],
-          "options": {
-            "jestConfig": "libs/interface/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "molecules": {
-      "projectType": "library",
-      "root": "libs/molecules",
-      "sourceRoot": "libs/molecules/src",
-      "prefix": "ballet",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/molecules/src/**/*.ts",
-              "libs/molecules/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/molecules"],
-          "options": {
-            "jestConfig": "libs/molecules/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "atoms": {
-      "projectType": "library",
-      "root": "libs/atoms",
-      "sourceRoot": "libs/atoms/src",
-      "prefix": "ballet",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/atoms/src/**/*.ts",
-              "libs/atoms/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/atoms"],
-          "options": {
-            "jestConfig": "libs/atoms/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "material": {
-      "projectType": "library",
-      "root": "libs/material",
-      "sourceRoot": "libs/material/src",
-      "prefix": "ballet",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/material/src/**/*.ts",
-              "libs/material/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/material"],
-          "options": {
-            "jestConfig": "libs/material/jest.config.js",
-            "passWithNoTests": true
+            "commands": [
+              "nx build user-service",
+              "docker build -f ./apps/user-service/Dockerfile . -t balletrafaelaguilar/user-service:1.0.0"
+            ],
+            "parallel": false
           }
         }
       }

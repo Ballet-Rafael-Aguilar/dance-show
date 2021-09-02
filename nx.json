@@ -1,13 +1,18 @@
 {
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": { "defaultBase": "main" },
+  "affected": {
+    "defaultBase": "main"
+  },
   "npmScope": "ballet",
   "tasksRunnerOptions": {
     "default": {
@@ -24,25 +29,49 @@
     }
   },
   "projects": {
-    "dance-show": { "tags": ["type:app"] },
+    "atoms": {
+      "tags": ["type:components"]
+    },
+    "catalog": {
+      "tags": ["type:lib"]
+    },
+    "dance-show": {
+      "tags": ["type:app"]
+    },
     "dance-show-e2e": {
       "tags": ["type:e2e"],
       "implicitDependencies": ["dance-show"]
     },
-    "playground": { "tags": ["type:app"] },
+    "interface": {
+      "tags": ["type:interface"]
+    },
+    "material": {
+      "tags": ["type:components"]
+    },
+    "molecules": {
+      "tags": ["type:components"]
+    },
+    "playground": {
+      "tags": ["type:app"]
+    },
     "playground-e2e": {
       "tags": ["type:e2e"],
       "implicitDependencies": ["playground"]
     },
-    "user-service": { "tags": ["type:backend"] },
-    "shared-storybook": { "tags": ["type:story"] },
-    "shared-theme": { "tags": ["type:assets"] },
-    "catalog": { "tags": ["type:lib"] },
-    "rest": { "tags": ["type:lib"] },
-    "shared-iu": { "tags": ["type:ui"] },
-    "interface": { "tags": ["type:interface"] },
-    "molecules": { "tags": ["type:components"] },
-    "atoms": { "tags": ["type:components"] },
-    "material": { "tags": ["type:components"] }
+    "rest": {
+      "tags": ["type:lib"]
+    },
+    "shared-iu": {
+      "tags": ["type:ui"]
+    },
+    "shared-storybook": {
+      "tags": ["type:story"]
+    },
+    "shared-theme": {
+      "tags": ["type:assets"]
+    },
+    "user-service": {
+      "tags": ["type:backend"]
+    }
   }
 }
