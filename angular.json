@@ -515,6 +515,81 @@
           }
         }
       }
+    },
+    "molecules": {
+      "projectType": "library",
+      "root": "libs/molecules",
+      "sourceRoot": "libs/molecules/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/molecules/src/**/*.ts",
+              "libs/molecules/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/molecules"],
+          "options": {
+            "jestConfig": "libs/molecules/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "atoms": {
+      "projectType": "library",
+      "root": "libs/atoms",
+      "sourceRoot": "libs/atoms/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/atoms/src/**/*.ts",
+              "libs/atoms/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/atoms"],
+          "options": {
+            "jestConfig": "libs/atoms/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "material": {
+      "projectType": "library",
+      "root": "libs/material",
+      "sourceRoot": "libs/material/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/material/src/**/*.ts",
+              "libs/material/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/material"],
+          "options": {
+            "jestConfig": "libs/material/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

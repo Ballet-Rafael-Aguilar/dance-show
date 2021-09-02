@@ -1,5 +1,5 @@
 import { BalletToolbarComponent } from './ballet-toolbar.component';
-import { CatalogModule } from '../../catalog.module';
+import { MoleculesModule } from '@ballet/molecules';
 
 export default {
   title: 'MatToolbarComponent'
@@ -7,7 +7,7 @@ export default {
 
 export const primary = () => ({
   moduleMetadata: {
-    imports: [CatalogModule]
+    imports: [MoleculesModule]
   },
   component: BalletToolbarComponent,
   props: {

@@ -40,6 +40,9 @@
     "catalog": { "tags": ["type:lib"] },
     "rest": { "tags": ["type:lib"] },
     "shared-iu": { "tags": ["type:ui"] },
-    "interface": { "tags": ["type:interface"] }
+    "interface": { "tags": ["type:interface"] },
+    "molecules": { "tags": ["type:components"] },
+    "atoms": { "tags": ["type:components"] },
+    "material": { "tags": ["type:components"] }
   }
 }

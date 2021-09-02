@@ -11,5 +11,7 @@ module.exports = {
     '<rootDir>/libs/rest',
     '<rootDir>/libs/shared/iu',
     '<rootDir>/libs/interface',
+    '<rootDir>/libs/molecules',
+    '<rootDir>/libs/atoms',
   ],
 };
