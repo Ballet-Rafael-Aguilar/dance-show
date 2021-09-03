@@ -6,7 +6,7 @@ import { SharedModule } from './shared/shared.module';
 import { SharedIuModule } from '@ballet/shared/iu';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { interceptors } from '@ballet/rest';
+import { interceptors } from '@ballet/shared/iu';
 
 @NgModule({
   declarations: [AppComponent],

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ToolbarInterface } from '@ballet/interfaces';
 
 @Component({
@@ -6,13 +6,6 @@ import { ToolbarInterface } from '@ballet/interfaces';
   templateUrl: './ballet-toolbar.component.html',
   styleUrls: ['./ballet-toolbar.component.scss']
 })
-export class BalletToolbarComponent implements OnInit {
-
-  @Input('config') config: ToolbarInterface;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class BalletToolbarComponent {
+  @Input() config: ToolbarInterface;
 }

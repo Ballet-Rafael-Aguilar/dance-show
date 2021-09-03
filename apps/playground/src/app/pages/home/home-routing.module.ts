@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutBaseComponent } from 'libs/catalog/src/lib/layout/layout-base/layout-base.component';
 import { HomeComponent } from './home.component';
+import { LayoutBaseComponent } from '@ballet/shared/iu';
 
 const routes: Routes = [
     {
