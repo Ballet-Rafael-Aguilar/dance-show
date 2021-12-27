@@ -6,7 +6,7 @@
 $font-family-base: 'Roboto', Helvetica, Arial, sans-serif;
 $font-family-header: "Nunito", Arial, sans-serif;
 $font-family-condensed: "Roboto Condensed", Arial, sans-serif;
-$cc-mat-typography: mat.define-typography-config(
+$default-mat-typography: mat.define-typography-config(
   $font-family: $font-family-base,
   $display-4: mat.define-typography-level(16px, 32px, 500, $font-family-header),
   $display-3: mat.define-typography-level(20px, 36px, 500, $font-family-header),
@@ -19,7 +19,7 @@ $cc-mat-typography: mat.define-typography-config(
   $caption: mat.define-typography-level(13px, 20px, 400, $font-family-condensed)
 );
 
-$cc-typography: (
+$default-typography: (
   display-6: mat.define-typography-level(60px, 48px, 600, $font-family-header),
   display-5: mat.define-typography-level(50px, 48px, 600, $font-family-header),
   info-text-big: mat.define-typography-level(18px, 20px, 400, $font-family-base),
@@ -35,7 +35,7 @@ $cc-typography: (
 
 .default-theme {
   // Green
-  $mat-cc-primary: (
+  $mat-default-primary: (
     50 : #e9f5f5,
     100 : #c7e6e5,
     200 : #a2d6d4,
@@ -71,7 +71,7 @@ $cc-typography: (
   );
 
   // Yellow
-  $mat-cc-accent: (
+  $mat-default-accent: (
     50 : #fff8e0,
     100 : #feeeb3,
     200 : #fee380,
@@ -104,7 +104,7 @@ $cc-typography: (
     )
   );
 
-  $mat-cc-warn: (
+  $mat-default-warn: (
     50: #ffebee,
     100: #ffcdd2,
     200: #ef9a9a,
@@ -137,7 +137,7 @@ $cc-typography: (
     )
   );
 
-  $cc-background: (
+  $default-background: (
     background: white,
     appbar: white,
     toolbar: white,
@@ -150,30 +150,30 @@ $cc-typography: (
     warning: #fff6d4,
   );
 
-  $cc-foreground: (
+  $default-foreground: (
     divider: #3b363c,
     text: #3b363c
   );
 
-  $cc-primary: mat.define-palette($mat-cc-primary, 500);
-  $cc-accent: mat.define-palette($mat-cc-accent, 500);
-  $cc-warn: mat.define-palette($mat-cc-warn, A200);
+  $default-primary: mat.define-palette($mat-default-primary, 500);
+  $default-accent: mat.define-palette($mat-default-accent, 500);
+  $default-warn: mat.define-palette($mat-default-warn, A200);
 
-  $cc-theme: mat.define-light-theme($cc-primary, $cc-accent, $cc-warn);
+  $default-theme: mat.define-light-theme($default-primary, $default-accent, $default-warn);
 
-  $background: map-get($cc-theme, background);
-  $background: map_merge($background, $cc-background);
-  $cc-theme: map_merge($cc-theme, (background: $background));
+  $background: map-get($default-theme, background);
+  $background: map_merge($background, $default-background);
+  $default-theme: map_merge($default-theme, (background: $background));
 
-  $cc-typography: map_merge($cc-typography, $cc-mat-typography);
-  $cc-theme: map_merge($cc-theme, (typography: $cc-typography));
+  $default-typography: map_merge($default-typography, $default-mat-typography);
+  $default-theme: map_merge($default-theme, (typography: $default-typography));
 
-  $foreground: map-get($cc-theme, foreground);
-  $foreground: map_merge($foreground, $cc-foreground);
-  $cc-theme: map_merge($cc-theme, (foreground: $foreground));
+  $foreground: map-get($default-theme, foreground);
+  $foreground: map_merge($foreground, $default-foreground);
+  $default-theme: map_merge($default-theme, (foreground: $foreground));
 
-  @include lib-theme($cc-theme);
-  @include mat.all-component-themes($cc-theme);
+  @include lib-theme($default-theme);
+  @include mat.all-component-themes($default-theme);
 }
 
 
