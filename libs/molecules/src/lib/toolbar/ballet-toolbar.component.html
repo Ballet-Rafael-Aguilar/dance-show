@@ -17,7 +17,7 @@
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
   </button>
-  <ballet-select [options]="config.themeSelect" (optionsChange)="onThemeChange($event)"></ballet-select>
+  <ng-template balletAtom atom="select" [options]="config.themeSelect" (optionsChange)="onThemeChange($event)"></ng-template>
   <ballet-button>Mat button</ballet-button>
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>share</mat-icon>
