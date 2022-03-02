@@ -8,6 +8,7 @@
   </a>
   <span class="example-spacer"></span>
   <div fxHide.lt-md>
+    <ng-content select="[menu]"></ng-content>
     <a mat-button routerLink="/home">Home</a>
     <a mat-button routerLink="/start-page">Start page</a>
     <a mat-button routerLink="/offer">Offer</a>
@@ -17,7 +18,7 @@
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
   </button>
-  <ng-template balletAtom atom="select" [options]="config.themeSelect" (optionsChange)="onThemeChange($event)"></ng-template>
+  <ng-content select="[theme]"></ng-content>
   <ballet-button>Mat button</ballet-button>
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>share</mat-icon>
@@ -27,6 +28,7 @@
 <mat-sidenav-container fxFlexFill class="example-container">
   <mat-sidenav #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
     <div fxLayout="column">
+      <ng-content select="[menu-side]"></ng-content>
       <a mat-button routerLink="/about-us">About us</a>
       <a mat-button routerLink="/prices">Prices</a>
       <a mat-button routerLink="/start-page">Start page</a>

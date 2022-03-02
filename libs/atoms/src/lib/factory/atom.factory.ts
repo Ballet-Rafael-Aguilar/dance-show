@@ -6,10 +6,9 @@ import { EventEmitter } from "@angular/core";
 export const products = {
   select: BalletSelectComponent,
   button: BalletButtonComponent
-}
+} as const;
 
 export type AtomType = keyof typeof products;
-export type AtomTypes = BalletSelectComponent | BalletButtonComponent;
 
 export interface Atom {
   id: string;

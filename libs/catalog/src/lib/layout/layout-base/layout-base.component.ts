@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
-import { Theme, ThemingService } from "../../../../../shared/theme/src/lib/theming.service";
+import { Theme, ThemingService } from "@ballet/shared/theme";
 import { ToolbarInterface } from "@ballet/interfaces";
 
 @Component({
   selector: 'ballet-layout-base',
   template: `
-      <ballet-toolbar [config]="toolbar" (configChange)="onThemeChange($event)">
+      <ballet-toolbar [config]="toolbar">
+          <ng-container theme balletAtom atom="select" [options]="toolbar.themeSelect"
+                        (optionsChange)="onThemeChange($event)">
+          </ng-container>
+          <ng-container menu balletAtom atom="select" [options]="toolbar.themeSelect"
+                        (optionsChange)="onThemeChange($event)">
+          </ng-container>
+          <ng-container menu-side balletAtom atom="select" [options]="toolbar.themeSelect"
+                        (optionsChange)="onThemeChange($event)">
+          </ng-container>
           <ballet-button></ballet-button>
           <h1>Welcome to {{ title }}!</h1>
           <h1>{{name}}</h1>
@@ -29,6 +38,6 @@ export class LayoutBaseComponent {
   }
 
   onThemeChange($event) {
-    this.themingService.setTheme($event.themeSelected.value);
+    this.themingService.setTheme($event.value);
   }
 }

@@ -21,7 +21,6 @@ export class AtomDirective implements OnInit {
   @Input() options: SelectInterface[];
   @Output() optionsChange = new EventEmitter<SelectInterface>();
 
-
   constructor(private element: ElementRef,
               private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ToolbarInterface } from '@ballet/interfaces';
 
 @Component({
@@ -8,9 +8,4 @@ import { ToolbarInterface } from '@ballet/interfaces';
 })
 export class BalletToolbarComponent {
   @Input() config: ToolbarInterface;
-  @Output() configChange = new EventEmitter<ToolbarInterface>();
-
-  onThemeChange($event) {
-    this.configChange.emit({...this.config, themeSelected: $event})
-  }
 }
