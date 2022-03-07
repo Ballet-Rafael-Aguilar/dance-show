@@ -1,17 +1,19 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Atom } from "../factory/atom.factory";
-import { SelectInterface } from "@ballet/interfaces";
+import { Atom, AtomOption } from "@ballet/interfaces";
 
 @Component({
   selector: 'ballet-button',
-  templateUrl: './ballet-button.component.html',
-  styleUrls: ['./ballet-button.component.scss']
+  template: `
+      <button [disabled]="isDisable" mat-button color="primary">
+          <ng-content></ng-content>
+      </button>
+  `
 })
 export class BalletButtonComponent implements Atom {
   id: string;
   @Input() isDisable: false;
-  @Input() options: SelectInterface[];
-  @Output() optionsChange = new EventEmitter<SelectInterface>();
+  @Input() options: AtomOption[];
+  @Output() optionsChange = new EventEmitter<AtomOption>();
 
   click(): void {
     console.log('Button');

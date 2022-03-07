@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { SelectInterface } from '@ballet/interfaces'
-import { Atom } from "../factory/atom.factory";
+import { Atom, AtomOption } from "@ballet/interfaces";
 
 @Component({
   selector: 'ballet-select',
@@ -15,8 +14,8 @@ import { Atom } from "../factory/atom.factory";
 })
 export class BalletSelectComponent implements Atom {
   @Input() isDisable: false;
-  @Input() options: SelectInterface[];
-  @Output() optionsChange = new EventEmitter<SelectInterface>();
+  @Input() options: AtomOption[];
+  @Output() optionsChange = new EventEmitter<AtomOption>();
 
   id: string;
 

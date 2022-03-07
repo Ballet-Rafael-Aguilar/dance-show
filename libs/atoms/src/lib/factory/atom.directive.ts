@@ -9,8 +9,8 @@ import {
   Output,
   ViewContainerRef
 } from '@angular/core';
-import { SelectInterface } from "@ballet/interfaces";
-import { Atom, AtomType, products } from "./atom.factory";
+import { AtomType, products } from "./atom";
+import { Atom, AtomOption } from "@ballet/interfaces";
 
 @Directive({
   selector: '[balletAtom]'
@@ -18,8 +18,8 @@ import { Atom, AtomType, products } from "./atom.factory";
 export class AtomDirective implements OnInit {
   @Input() atom: AtomType;
   @Input() isDisable: false;
-  @Input() options: SelectInterface[];
-  @Output() optionsChange = new EventEmitter<SelectInterface>();
+  @Input() options: AtomOption[];
+  @Output() optionsChange = new EventEmitter<AtomOption>();
 
   constructor(private element: ElementRef,
               private viewContainerRef: ViewContainerRef,

@@ -15,7 +15,7 @@ import { AtomDirective } from './factory/atom.directive';
     AtomDirective,
     CommonModule,
     FlexLayoutModule,
-    MaterialModule,
+    MaterialModule
   ]
 })
 export class AtomsModule {}
