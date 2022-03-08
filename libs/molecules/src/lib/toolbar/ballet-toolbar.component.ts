@@ -22,16 +22,11 @@ import { Component, ContentChild, TemplateRef } from '@angular/core';
       <mat-sidenav-container fxFlexFill class="example-container">
           <mat-sidenav #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
               <div fxLayout="column">
-
-                  <a mat-button routerLink="/about-us">About us</a>
-                  <a mat-button routerLink="/prices">Prices</a>
-                  <a mat-button routerLink="/start-page">Start page</a>
-                  <a mat-button routerLink="/offer">Offer</a>
-                  <a mat-button routerLink="/contact">Contact</a>
+                  <ng-content *ngTemplateOutlet="sideMenu"></ng-content>
               </div>
           </mat-sidenav>
           <mat-sidenav-content fxFlexFill>
-              <ng-content></ng-content>
+              <ng-content *ngTemplateOutlet="content"></ng-content>
           </mat-sidenav-content>
       </mat-sidenav-container>
   `
@@ -39,5 +34,5 @@ import { Component, ContentChild, TemplateRef } from '@angular/core';
 export class BalletToolbarComponent {
   @ContentChild('menu', {read: TemplateRef}) menu: TemplateRef<any>;
   @ContentChild('sideMenu', {read: TemplateRef}) sideMenu: TemplateRef<any>;
-
+  @ContentChild('content', {read: TemplateRef}) content: TemplateRef<any>;
 }

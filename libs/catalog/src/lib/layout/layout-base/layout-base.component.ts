@@ -6,25 +6,18 @@ import { Router } from "@angular/router";
   selector: 'ballet-layout-base',
   template: `
       <ballet-toolbar>
-          <ng-template #menu>
+          <ng-template #menu #sideMenu>
               <ng-container *ngFor="let item of menuItems">
                   <ng-container balletAtom [atom]="item.type" [options]="item.config"
                                 (optionsChange)="onThemeChange($event)">
                   </ng-container>
               </ng-container>
           </ng-template>
-            <!--
-            <ng-template #sideMenu>
-              <ng-container *ngFor="let item of menuItems">
-                  <ng-container balletAtom [atom]="item.type" [options]="item.config"
-                                (optionsChange)="onThemeChange($event)">
-                  </ng-container>
-              </ng-container>
+          <ng-template #content>
+              <h1>Welcome to {{ title }}!</h1>
+              <h1>{{name}}</h1>
+              <router-outlet></router-outlet>
           </ng-template>
-            -->          
-          <h1>Welcome to {{ title }}!</h1>
-          <h1>{{name}}</h1>
-          <router-outlet></router-outlet>
       </ballet-toolbar>
   `
 })
@@ -43,14 +36,14 @@ export class LayoutBaseComponent {
           }
         },
         type: 'button'
-      },{
+      }, {
         config: {
           text: 'Contact', click: () => {
             this.navigateTo('contact');
           }
         },
         type: 'button'
-      },{
+      }, {
         config: {
           text: 'About us', click: () => {
             this.navigateTo('about');
