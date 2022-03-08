@@ -4,8 +4,7 @@ import { Component, ContentChild, TemplateRef } from '@angular/core';
   selector: 'ballet-toolbar',
   template: `
       <mat-toolbar>
-          <button fxHide.gt-sm mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
-                  (click)="sidenav.toggle()">
+          <button fxHide.gt-sm mat-icon-button (click)="sidenav.toggle()">
               <mat-icon>menu</mat-icon>
           </button>
           <a mat-button routerLink="/">
@@ -15,20 +14,15 @@ import { Component, ContentChild, TemplateRef } from '@angular/core';
           <div fxHide.lt-md>
               <ng-content *ngTemplateOutlet="menu"></ng-content>
           </div>
-          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <button mat-icon-button>
               <mat-icon>favorite</mat-icon>
-          </button>
-          <ng-content select="[theme]"></ng-content>
-          <ballet-button>Mat button</ballet-button>
-          <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-              <mat-icon>share</mat-icon>
           </button>
       </mat-toolbar>
 
       <mat-sidenav-container fxFlexFill class="example-container">
-          <mat-sidenav #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+          <mat-sidenav #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
               <div fxLayout="column">
-                  <ng-content select="[menu-side]"></ng-content>
+
                   <a mat-button routerLink="/about-us">About us</a>
                   <a mat-button routerLink="/prices">Prices</a>
                   <a mat-button routerLink="/start-page">Start page</a>
@@ -43,6 +37,7 @@ import { Component, ContentChild, TemplateRef } from '@angular/core';
   `
 })
 export class BalletToolbarComponent {
-  @ContentChild('menu', { read: TemplateRef }) menu: TemplateRef<any>;
+  @ContentChild('menu', {read: TemplateRef}) menu: TemplateRef<any>;
+  @ContentChild('sideMenu', {read: TemplateRef}) sideMenu: TemplateRef<any>;
 
 }

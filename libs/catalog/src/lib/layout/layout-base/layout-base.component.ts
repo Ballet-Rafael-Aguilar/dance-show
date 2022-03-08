@@ -6,27 +6,22 @@ import { Router } from "@angular/router";
   selector: 'ballet-layout-base',
   template: `
       <ballet-toolbar>
-          <ng-container theme balletAtom atom="select" [options]="menuItems[1].config"
-                        (optionsChange)="onThemeChange($event)">
-          </ng-container>
           <ng-template #menu>
-              <!--
-              <a mat-button routerLink="/home">Home</a>
-              <a mat-button routerLink="/start-page">Start page</a>
-              <a mat-button routerLink="/offer">Offer</a>
-              <a mat-button routerLink="/contact">Contact</a>
-              <a mat-button routerLink="/about-us">About us</a>
-              -->
               <ng-container *ngFor="let item of menuItems">
                   <ng-container balletAtom [atom]="item.type" [options]="item.config"
                                 (optionsChange)="onThemeChange($event)">
                   </ng-container>
               </ng-container>
           </ng-template>
-          <ng-container menu-side balletAtom atom="select" [options]="menuItems[1].config"
-                        (optionsChange)="onThemeChange($event)">
-          </ng-container>
-          <ballet-button>ui</ballet-button>
+            <!--
+            <ng-template #sideMenu>
+              <ng-container *ngFor="let item of menuItems">
+                  <ng-container balletAtom [atom]="item.type" [options]="item.config"
+                                (optionsChange)="onThemeChange($event)">
+                  </ng-container>
+              </ng-container>
+          </ng-template>
+            -->          
           <h1>Welcome to {{ title }}!</h1>
           <h1>{{name}}</h1>
           <router-outlet></router-outlet>
@@ -36,15 +31,14 @@ import { Router } from "@angular/router";
 export class LayoutBaseComponent {
   title = 'playground';
   name = 'User';
-  menuItems: any;
-  themeSelected: any;
+  menuItems;
+  themeSelected;
 
   constructor(private themingService: ThemingService, private readonly router: Router) {
     this.menuItems = [
       {
         config: {
           text: 'Home', click: () => {
-            console.log('Home click');
             this.navigateTo('home');
           }
         },
@@ -52,7 +46,6 @@ export class LayoutBaseComponent {
       },{
         config: {
           text: 'Contact', click: () => {
-            console.log('Contact click');
             this.navigateTo('contact');
           }
         },
@@ -60,7 +53,6 @@ export class LayoutBaseComponent {
       },{
         config: {
           text: 'About us', click: () => {
-            console.log('About us click');
             this.navigateTo('about');
           }
         },
