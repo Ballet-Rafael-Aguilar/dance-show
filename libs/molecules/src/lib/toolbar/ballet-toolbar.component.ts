@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ContentChild, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'ballet-toolbar',
@@ -13,12 +13,7 @@ import { Component } from '@angular/core';
           </a>
           <span class="example-spacer"></span>
           <div fxHide.lt-md>
-              <ng-content select="[menu]"></ng-content>
-              <a mat-button routerLink="/home">Home</a>
-              <a mat-button routerLink="/start-page">Start page</a>
-              <a mat-button routerLink="/offer">Offer</a>
-              <a mat-button routerLink="/contact">Contact</a>
-              <a mat-button routerLink="/about-us">About us</a>
+              <ng-content *ngTemplateOutlet="menu"></ng-content>
           </div>
           <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
               <mat-icon>favorite</mat-icon>
@@ -48,4 +43,6 @@ import { Component } from '@angular/core';
   `
 })
 export class BalletToolbarComponent {
+  @ContentChild('menu', { read: TemplateRef }) menu: TemplateRef<any>;
+
 }

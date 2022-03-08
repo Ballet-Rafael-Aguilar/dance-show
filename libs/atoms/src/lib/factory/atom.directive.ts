@@ -18,7 +18,7 @@ import { Atom, AtomOption } from "@ballet/interfaces";
 export class AtomDirective implements OnInit {
   @Input() atom: AtomType;
   @Input() isDisable: false;
-  @Input() options: AtomOption[];
+  @Input() options: AtomOption | AtomOption[];
   @Output() optionsChange = new EventEmitter<AtomOption>();
 
   constructor(private element: ElementRef,
@@ -33,7 +33,14 @@ export class AtomDirective implements OnInit {
     const component = this.viewContainerRef.createComponent(componentFactory);
 
     component.instance.isDisable = this.isDisable;
-    component.instance.options = this.options;
     component.instance.optionsChange = this.optionsChange;
+    if (Array.isArray(this.options)){
+      component.instance.options = this.options;
+    } else {
+      component.instance.option = this.options;
+      if( this.options?.click) {
+        component.instance.click = this.options.click;
+      }
+    }
   }
 }
