@@ -29,10 +29,16 @@
     }
   },
   "projects": {
-    "atoms": {
+    "common-atoms": {
       "tags": ["type:components"]
     },
-    "catalog": {
+    "common-catalog": {
+      "tags": ["type:lib"]
+    },
+    "common-molecules": {
+      "tags": ["type:components"]
+    },
+    "common-rest": {
       "tags": ["type:lib"]
     },
     "dance-show": {
@@ -48,18 +54,12 @@
     "material": {
       "tags": ["type:components"]
     },
-    "molecules": {
-      "tags": ["type:components"]
-    },
     "playground": {
       "tags": ["type:app"]
     },
     "playground-e2e": {
       "tags": ["type:e2e"],
       "implicitDependencies": ["playground"]
-    },
-    "rest": {
-      "tags": ["type:lib"]
     },
     "shared-iu": {
       "tags": ["type:ui"]

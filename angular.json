@@ -33,37 +33,35 @@
     }
   },
   "projects": {
-    "atoms": {
+    "common-atoms": {
       "projectType": "library",
-      "root": "libs/atoms",
-      "sourceRoot": "libs/atoms/src",
+      "root": "libs/common/atoms",
+      "sourceRoot": "libs/common/atoms/src",
       "prefix": "ballet",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/atoms/src/**/*.ts",
-              "libs/atoms/src/**/*.html"
+              "libs/common/atoms/src/**/*.ts",
+              "libs/common/atoms/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/atoms"
-          ],
+          "outputs": ["coverage/libs/common/atoms"],
           "options": {
-            "jestConfig": "libs/atoms/jest.config.js",
+            "jestConfig": "libs/common/atoms/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "catalog": {
+    "common-catalog": {
       "projectType": "library",
-      "root": "libs/catalog",
-      "sourceRoot": "libs/catalog/src",
+      "root": "libs/common/catalog",
+      "sourceRoot": "libs/common/catalog/src",
       "prefix": "ballet",
       "architect": {
         "lint": {
@@ -77,11 +75,59 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/catalog"
-          ],
+          "outputs": ["coverage/libs/common/catalog"],
           "options": {
-            "jestConfig": "libs/catalog/jest.config.js",
+            "jestConfig": "libs/common/catalog/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "common-molecules": {
+      "projectType": "library",
+      "root": "libs/common/molecules",
+      "sourceRoot": "libs/common/molecules/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/molecules/src/**/*.ts",
+              "libs/common/molecules/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/molecules"],
+          "options": {
+            "jestConfig": "libs/common/molecules/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "common-rest": {
+      "projectType": "library",
+      "root": "libs/common/rest",
+      "sourceRoot": "libs/common/rest/src",
+      "prefix": "ballet",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/rest/src/**/*.ts",
+              "libs/common/rest/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/rest"],
+          "options": {
+            "jestConfig": "libs/common/rest/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -105,9 +151,7 @@
               "apps/dance-show/src/favicon.ico",
               "apps/dance-show/src/assets"
             ],
-            "styles": [
-              "apps/dance-show/src/styles.scss"
-            ],
+            "styles": ["apps/dance-show/src/styles.scss"],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -175,9 +219,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/dance-show"
-          ],
+          "outputs": ["coverage/apps/dance-show"],
           "options": {
             "jestConfig": "apps/dance-show/jest.config.js",
             "passWithNoTests": true
@@ -206,9 +248,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/dance-show-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/dance-show-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -230,9 +270,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/interface"
-          ],
+          "outputs": ["coverage/libs/interface"],
           "options": {
             "jestConfig": "libs/interface/jest.config.js",
             "passWithNoTests": true
@@ -257,38 +295,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/material"
-          ],
+          "outputs": ["coverage/libs/material"],
           "options": {
             "jestConfig": "libs/material/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "molecules": {
-      "projectType": "library",
-      "root": "libs/molecules",
-      "sourceRoot": "libs/molecules/src",
-      "prefix": "ballet",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/molecules/src/**/*.ts",
-              "libs/molecules/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/molecules"
-          ],
-          "options": {
-            "jestConfig": "libs/molecules/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -313,13 +322,9 @@
               "apps/playground/src/assets"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "libs/shared/theme/assets"
-              ]
+              "includePaths": ["libs/shared/theme/assets"]
             },
-            "styles": [
-              "apps/playground/src/styles.scss"
-            ],
+            "styles": ["apps/playground/src/styles.scss"],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -387,9 +392,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/playground"
-          ],
+          "outputs": ["coverage/apps/playground"],
           "options": {
             "jestConfig": "apps/playground/jest.config.js",
             "passWithNoTests": true
@@ -428,36 +431,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/playground-e2e/**/*.{js,ts}"
-            ]
-          }
-        }
-      }
-    },
-    "rest": {
-      "projectType": "library",
-      "root": "libs/rest",
-      "sourceRoot": "libs/rest/src",
-      "prefix": "ballet",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/rest/src/**/*.ts",
-              "libs/rest/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/rest"
-          ],
-          "options": {
-            "jestConfig": "libs/rest/jest.config.js",
-            "passWithNoTests": true
+            "lintFilePatterns": ["apps/playground-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -479,9 +453,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/iu"
-          ],
+          "outputs": ["coverage/libs/shared/iu"],
           "options": {
             "jestConfig": "libs/shared/iu/jest.config.js",
             "passWithNoTests": true
@@ -506,9 +478,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/storybook"
-          ],
+          "outputs": ["coverage/libs/shared/storybook"],
           "options": {
             "jestConfig": "libs/shared/storybook/jest.config.js",
             "passWithNoTests": true
@@ -531,9 +501,7 @@
         },
         "build-storybook": {
           "builder": "@nrwl/storybook:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/angular",
             "outputPath": "dist/storybook/shared-storybook",
@@ -566,9 +534,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/theme"
-          ],
+          "outputs": ["coverage/libs/shared/theme"],
           "options": {
             "jestConfig": "libs/shared/theme/jest.config.js",
             "passWithNoTests": true
@@ -583,16 +549,12 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/user-service",
             "main": "apps/user-service/src/main.ts",
             "tsConfig": "apps/user-service/tsconfig.app.json",
-            "assets": [
-              "apps/user-service/src/assets"
-            ],
+            "assets": ["apps/user-service/src/assets"],
             "generatePackageJson": true
           },
           "configurations": {
@@ -618,16 +580,12 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/user-service/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/user-service/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/user-service"
-          ],
+          "outputs": ["coverage/apps/user-service"],
           "options": {
             "jestConfig": "apps/user-service/jest.config.js",
             "passWithNoTests": true
