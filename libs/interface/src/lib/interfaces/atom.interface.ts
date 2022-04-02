@@ -1,6 +1,6 @@
 import { EventEmitter } from "@angular/core";
 
-export declare type ClickFn = (...args: []) => void;
+export declare type ClickFn = (...args: any[]) => void;
 
 export interface Atom {
   id: string;
