@@ -1,20 +1,20 @@
 import { EventEmitter } from "@angular/core";
 
-export declare type ClickFn = ($event?) => void;
+export declare type ClickFn = (...args: []) => void;
 
 export interface Atom {
   id: string;
-  isDisable: boolean;
-  option?: AtomOption;
-  options?: AtomOption[];
-  optionsChange: EventEmitter<AtomOption>;
-  click: ClickFn;
+  isDisable?: boolean;
+  options?: AtomOption | AtomOption[];
+  optionsChange?: EventEmitter<AtomOption>;
+  click?: ClickFn;
 }
 
 export interface AtomOptions {
   value;
   text: string;
-  click?: ClickFn;
 }
 
 export type AtomOption = Partial<AtomOptions>;
+
+export type CommonComponents = Atom;

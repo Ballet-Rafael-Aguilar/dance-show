@@ -8,8 +8,7 @@ import { Router } from "@angular/router";
       <ballet-toolbar>
           <ng-template #menu #sideMenu>
               <ng-container *ngFor="let item of menuItems">
-                  <ng-container balletAtom [atom]="item.type" [options]="item.config"
-                                (optionsChange)="onThemeChange($event)">
+                  <ng-container balletAtom [type]="item.type" [config]="item.config">
                   </ng-container>
               </ng-container>
           </ng-template>
@@ -31,31 +30,44 @@ export class LayoutBaseComponent {
     this.menuItems = [
       {
         config: {
-          text: 'Home', click: () => {
+          id: 'home-header-button',
+          options: {text: 'Home'},
+          click: () => {
             this.navigateTo('home');
           }
         },
         type: 'button'
       }, {
         config: {
-          text: 'Contact', click: () => {
+          id: 'contact-header-button',
+          options: {text: 'Contact'},
+          click: () => {
             this.navigateTo('contact');
           }
         },
         type: 'button'
       }, {
         config: {
-          text: 'About us', click: () => {
+          id: 'about-header-button',
+          options: {text: 'About us'},
+          click: () => {
             this.navigateTo('about');
           }
         },
         type: 'button'
       },
       {
-        config: [
-          {value: "default-theme" as Theme, text: 'light'},
-          {value: "dark-theme" as Theme, text: 'dark'}
-        ],
+        config:
+          {
+            id: 'theme-header-select',
+            options: [
+              {value: "default-theme" as Theme, text: 'light'},
+              {value: "dark-theme" as Theme, text: 'dark'}
+            ],
+            click: ($event) => {
+              this.onThemeChange($event);
+            }
+          },
         type: 'select'
       }
     ];
