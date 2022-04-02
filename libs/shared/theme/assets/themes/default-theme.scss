@@ -1,41 +1,41 @@
-@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
 @import 'libs/shared/theme/assets/lib-theme';
 
-@include mat-core();
+@include mat.core();
 
 $font-family-base: 'Roboto', Helvetica, Arial, sans-serif;
 $font-family-header: "Nunito", Arial, sans-serif;
 $font-family-condensed: "Roboto Condensed", Arial, sans-serif;
-$cc-mat-typography: mat-typography-config(
+$default-mat-typography: mat.define-typography-config(
   $font-family: $font-family-base,
-  $display-4: mat-typography-level(16px, 32px, 500, $font-family-header),
-  $display-3: mat-typography-level(20px, 36px, 500, $font-family-header),
-  $display-2: mat-typography-level(30px, 48px, 400, $font-family-header),
-  $display-1: mat-typography-level(26px, 40px, 400, $font-family-header),
-  $subheading-2: mat-typography-level(20px, 1.2, 400, $font-family-header),
-  $subheading-1: mat-typography-level(16px, 1.2, 400, $font-family-header),
-  $body-2: mat-typography-level(15px, 20px, 700, $font-family-condensed),
-  $body-1: mat-typography-level(15px, 20px, 400, $font-family-condensed),
-  $caption: mat-typography-level(13px, 20px, 400, $font-family-condensed)
+  $display-4: mat.define-typography-level(16px, 32px, 500, $font-family-header),
+  $display-3: mat.define-typography-level(20px, 36px, 500, $font-family-header),
+  $display-2: mat.define-typography-level(30px, 48px, 400, $font-family-header),
+  $display-1: mat.define-typography-level(26px, 40px, 400, $font-family-header),
+  $subheading-2: mat.define-typography-level(20px, 1.2, 400, $font-family-header),
+  $subheading-1: mat.define-typography-level(16px, 1.2, 400, $font-family-header),
+  $body-2: mat.define-typography-level(15px, 20px, 700, $font-family-condensed),
+  $body-1: mat.define-typography-level(15px, 20px, 400, $font-family-condensed),
+  $caption: mat.define-typography-level(13px, 20px, 400, $font-family-condensed)
 );
 
-$cc-typography: (
-  display-6: mat-typography-level(60px, 48px, 600, $font-family-header),
-  display-5: mat-typography-level(50px, 48px, 600, $font-family-header),
-  info-text-big: mat-typography-level(18px, 20px, 400, $font-family-base),
-  info-text: mat-typography-level(16px, 20px, 400, $font-family-base),
-  info-text-small: mat-typography-level(14px, 20px, 400, $font-family-base),
-  sidenav-title: mat-typography-level(18px, 1, 800, $font-family-base),
-  sidenav-subtitle: mat-typography-level(12px, 40px, 400, $font-family-base),
-  sidenav-menu: mat-typography-level(16px, 20px, 400, $font-family-condensed),
-  sidenav-menu-strong: mat-typography-level(16px, 32px, 800, $font-family-condensed),
-  detail-header: mat-typography-level(13px, 20px, 700, $font-family-condensed),
-  detail-caption: mat-typography-level(15px, 20px, 400, $font-family-base)
+$default-typography: (
+  display-6: mat.define-typography-level(60px, 48px, 600, $font-family-header),
+  display-5: mat.define-typography-level(50px, 48px, 600, $font-family-header),
+  info-text-big: mat.define-typography-level(18px, 20px, 400, $font-family-base),
+  info-text: mat.define-typography-level(16px, 20px, 400, $font-family-base),
+  info-text-small: mat.define-typography-level(14px, 20px, 400, $font-family-base),
+  sidenav-title: mat.define-typography-level(18px, 1, 800, $font-family-base),
+  sidenav-subtitle: mat.define-typography-level(12px, 40px, 400, $font-family-base),
+  sidenav-menu: mat.define-typography-level(16px, 20px, 400, $font-family-condensed),
+  sidenav-menu-strong: mat.define-typography-level(16px, 32px, 800, $font-family-condensed),
+  detail-header: mat.define-typography-level(13px, 20px, 700, $font-family-condensed),
+  detail-caption: mat.define-typography-level(15px, 20px, 400, $font-family-base)
 );
 
 .default-theme {
   // Green
-  $mat-cc-primary: (
+  $mat-default-primary: (
     50 : #e9f5f5,
     100 : #c7e6e5,
     200 : #a2d6d4,
@@ -51,17 +51,17 @@ $cc-typography: (
     A400 : #59fff3,
     A700 : #40fff1,
     contrast: (
-      50 : $dark-primary-text,
+      50 : rgba(black, 0.87),
       100 : #3b363c,
       150 : #4a4a4a,
       200 : #908F8F,
       300 : #8f8e8e,
       400 : #747373,
-      500 : $light-primary-text,
+      500 : white,
       600 : #635F63,
       700 : #3b363c,
       800 : #B8B8B8,
-      900 : $light-primary-text,
+      900 : white,
       A100 : #000000,
       A200 : #000000,
       A400 : #000000,
@@ -71,7 +71,7 @@ $cc-typography: (
   );
 
   // Yellow
-  $mat-cc-accent: (
+  $mat-default-accent: (
     50 : #fff8e0,
     100 : #feeeb3,
     200 : #fee380,
@@ -104,7 +104,7 @@ $cc-typography: (
     )
   );
 
-  $mat-cc-warn: (
+  $mat-default-warn: (
     50: #ffebee,
     100: #ffcdd2,
     200: #ef9a9a,
@@ -120,24 +120,24 @@ $cc-typography: (
     A400: #ff1744,
     A700: #d50000,
     contrast: (
-      50: $dark-primary-text,
-      100: $dark-primary-text,
-      200: $dark-primary-text,
-      300: $dark-primary-text,
-      400: $dark-primary-text,
-      500: $light-primary-text,
-      600: $light-primary-text,
-      700: $light-primary-text,
-      800: $light-primary-text,
-      900: $light-primary-text,
-      A100: $dark-primary-text,
-      A200: $light-primary-text,
-      A400: $light-primary-text,
-      A700: $light-primary-text,
+      50: rgba(black, 0.87),
+      100: rgba(black, 0.87),
+      200: rgba(black, 0.87),
+      300: rgba(black, 0.87),
+      400: rgba(black, 0.87),
+      500: white,
+      600: white,
+      700: white,
+      800: white,
+      900: white,
+      A100: rgba(black, 0.87),
+      A200: white,
+      A400: white,
+      A700: white,
     )
   );
 
-  $cc-background: (
+  $default-background: (
     background: white,
     appbar: white,
     toolbar: white,
@@ -150,30 +150,30 @@ $cc-typography: (
     warning: #fff6d4,
   );
 
-  $cc-foreground: (
+  $default-foreground: (
     divider: #3b363c,
     text: #3b363c
   );
 
-  $cc-primary: mat-palette($mat-cc-primary, 500);
-  $cc-accent: mat-palette($mat-cc-accent, 500);
-  $cc-warn: mat-palette($mat-cc-warn, A200);
+  $default-primary: mat.define-palette($mat-default-primary, 500);
+  $default-accent: mat.define-palette($mat-default-accent, 500);
+  $default-warn: mat.define-palette($mat-default-warn, A200);
 
-  $cc-theme: mat-light-theme($cc-primary, $cc-accent, $cc-warn);
+  $default-theme: mat.define-light-theme($default-primary, $default-accent, $default-warn);
 
-  $background: map-get($cc-theme, background);
-  $background: map_merge($background, $cc-background);
-  $cc-theme: map_merge($cc-theme, (background: $background));
+  $background: map-get($default-theme, background);
+  $background: map_merge($background, $default-background);
+  $default-theme: map_merge($default-theme, (background: $background));
 
-  $cc-typography: map_merge($cc-typography, $cc-mat-typography);
-  $cc-theme: map_merge($cc-theme, (typography: $cc-typography));
+  $default-typography: map_merge($default-typography, $default-mat-typography);
+  $default-theme: map_merge($default-theme, (typography: $default-typography));
 
-  $foreground: map-get($cc-theme, foreground);
-  $foreground: map_merge($foreground, $cc-foreground);
-  $cc-theme: map_merge($cc-theme, (foreground: $foreground));
+  $foreground: map-get($default-theme, foreground);
+  $foreground: map_merge($foreground, $default-foreground);
+  $default-theme: map_merge($default-theme, (foreground: $foreground));
 
-  @include lib-theme($cc-theme);
-  @include angular-material-theme($cc-theme);
+  @include lib-theme($default-theme);
+  @include mat.all-component-themes($default-theme);
 }
 
 

@@ -15,8 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ballet/common-atoms": ["libs/common/atoms/src/index.ts"],
+      "@ballet/common-catalog": ["libs/common/catalog/src/index.ts"],
+      "@ballet/common-molecules": ["libs/common/molecules/src/index.ts"],
+      "@ballet/common-rest": ["libs/common/rest/src/index.ts"],
+      "@ballet/interfaces": ["libs/interface/src/index.ts"],
       "@ballet/material": ["libs/material/src/index.ts"],
-      "@ballet/bulma": ["libs/bulma/src/index.ts"],
+      "@ballet/shared/iu": ["libs/shared/iu/src/index.ts"],
       "@ballet/shared/storybook": ["libs/shared/storybook/src/index.ts"],
       "@ballet/shared/theme": ["libs/shared/theme/src/index.ts"]
     }

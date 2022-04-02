@@ -1,11 +1,3 @@
-module.exports = {
-  projects: [
-    '<rootDir>/apps/dance-show',
-    '<rootDir>/libs/material',
-    '<rootDir>/libs/bulma',
-    '<rootDir>/apps/playground',
-    '<rootDir>/apps/user-service',
-    '<rootDir>/libs/shared/storybook',
-    '<rootDir>/libs/shared/theme',
-  ],
-};
+const { getJestProjects } = require('@nrwl/jest');
+
+module.exports = { projects: [...getJestProjects(), '<rootDir>/libs/bulma'] };

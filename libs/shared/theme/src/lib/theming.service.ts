@@ -4,6 +4,8 @@ import {OverlayContainer} from '@angular/cdk/overlay';
 
 const DEFAULT_THEME = 'default-theme';
 
+export type Theme = typeof DEFAULT_THEME | 'dark-theme';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,12 +18,12 @@ export class ThemingService {
     this.setTheme(DEFAULT_THEME);
   }
 
-  setTheme(selectedTheme: string) {
+  setTheme(selectedTheme: Theme) {
     this.setCustomTheme(selectedTheme);
     this.previousSelected = selectedTheme;
   }
 
-  private setCustomTheme(selectedTheme: string) {
+  private setCustomTheme(selectedTheme: Theme) {
     this.selectedTheme.next(selectedTheme);
     this.setOverlay(selectedTheme);
   }

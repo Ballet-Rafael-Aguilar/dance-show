@@ -1,13 +1,18 @@
 {
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": { "defaultBase": "main" },
+  "affected": {
+    "defaultBase": "main"
+  },
   "npmScope": "ballet",
   "tasksRunnerOptions": {
     "default": {
@@ -24,14 +29,49 @@
     }
   },
   "projects": {
-    "dance-show": { "tags": [] },
-    "dance-show-e2e": { "tags": [], "implicitDependencies": ["dance-show"] },
-    "material": { "tags": [] },
-    "bulma": { "tags": [] },
-    "playground": { "tags": [] },
-    "playground-e2e": { "tags": [], "implicitDependencies": ["playground"] },
-    "user-service": { "tags": [] },
-    "shared-storybook": { "tags": [] },
-    "shared-theme": { "tags": ["type:assets"] }
+    "common-atoms": {
+      "tags": ["type:components"]
+    },
+    "common-catalog": {
+      "tags": ["type:lib"]
+    },
+    "common-molecules": {
+      "tags": ["type:components"]
+    },
+    "common-rest": {
+      "tags": ["type:lib"]
+    },
+    "dance-show": {
+      "tags": ["type:app"]
+    },
+    "dance-show-e2e": {
+      "tags": ["type:e2e"],
+      "implicitDependencies": ["dance-show"]
+    },
+    "interface": {
+      "tags": ["type:interface"]
+    },
+    "material": {
+      "tags": ["type:components"]
+    },
+    "playground": {
+      "tags": ["type:app"]
+    },
+    "playground-e2e": {
+      "tags": ["type:e2e"],
+      "implicitDependencies": ["playground"]
+    },
+    "shared-iu": {
+      "tags": ["type:ui"]
+    },
+    "shared-storybook": {
+      "tags": ["type:story"]
+    },
+    "shared-theme": {
+      "tags": ["type:assets"]
+    },
+    "user-service": {
+      "tags": ["type:backend"]
+    }
   }
 }
