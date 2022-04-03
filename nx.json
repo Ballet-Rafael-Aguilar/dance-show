@@ -24,54 +24,40 @@
           "test",
           "e2e",
           "build-storybook"
-        ]
+        ],
+        "parallel": 1
       }
     }
   },
-  "projects": {
-    "common-atoms": {
-      "tags": ["type:components"]
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "231826e9-26a3-4439-b2d3-2de4d65ae34d"
+  },
+  "defaultProject": "dance-show",
+  "generators": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
     },
-    "common-catalog": {
-      "tags": ["type:lib"]
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
     },
-    "common-molecules": {
-      "tags": ["type:components"]
+    "@nrwl/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
     },
-    "common-rest": {
-      "tags": ["type:lib"]
-    },
-    "dance-show": {
-      "tags": ["type:app"]
-    },
-    "dance-show-e2e": {
-      "tags": ["type:e2e"],
-      "implicitDependencies": ["dance-show"]
-    },
-    "interface": {
-      "tags": ["type:interface"]
-    },
-    "material": {
-      "tags": ["type:components"]
-    },
-    "playground": {
-      "tags": ["type:app"]
-    },
-    "playground-e2e": {
-      "tags": ["type:e2e"],
-      "implicitDependencies": ["playground"]
-    },
-    "shared-iu": {
-      "tags": ["type:ui"]
-    },
-    "shared-storybook": {
-      "tags": ["type:story"]
-    },
-    "shared-theme": {
-      "tags": ["type:assets"]
-    },
-    "user-service": {
-      "tags": ["type:backend"]
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   }
 }

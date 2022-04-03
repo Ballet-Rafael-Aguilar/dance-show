@@ -1,37 +1,5 @@
 {
   "version": 1,
-  "cli": {
-    "defaultCollection": "@nrwl/angular",
-    "analytics": "231826e9-26a3-4439-b2d3-2de4d65ae34d"
-  },
-  "defaultProject": "dance-show",
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
-      },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    }
-  },
   "projects": {
     "common-atoms": {
       "projectType": "library",
@@ -46,7 +14,8 @@
               "libs/common/atoms/src/**/*.ts",
               "libs/common/atoms/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -56,7 +25,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": ["type:components"]
     },
     "common-catalog": {
       "projectType": "library",
@@ -71,7 +41,8 @@
               "libs/rest/src/**/*.ts",
               "libs/rest/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -81,7 +52,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": ["type:lib"]
     },
     "common-molecules": {
       "projectType": "library",
@@ -96,7 +68,8 @@
               "libs/common/molecules/src/**/*.ts",
               "libs/common/molecules/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -106,7 +79,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": ["type:components"]
     },
     "common-rest": {
       "projectType": "library",
@@ -121,7 +95,8 @@
               "libs/common/rest/src/**/*.ts",
               "libs/common/rest/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -131,7 +106,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": ["type:lib"]
     },
     "dance-show": {
       "projectType": "application",
@@ -215,7 +191,8 @@
               "apps/dance-show/src/**/*.ts",
               "apps/dance-show/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -225,7 +202,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": ["type:app"]
     },
     "dance-show-e2e": {
       "root": "apps/dance-show-e2e",
@@ -249,9 +227,12 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/dance-show-e2e/**/*.{js,ts}"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         }
-      }
+      },
+      "tags": ["type:e2e"],
+      "implicitDependencies": ["dance-show"]
     },
     "interface": {
       "projectType": "library",
@@ -266,7 +247,8 @@
               "libs/interface/src/**/*.ts",
               "libs/interface/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -276,7 +258,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": ["type:interface"]
     },
     "material": {
       "projectType": "library",
@@ -291,7 +274,8 @@
               "libs/material/src/**/*.ts",
               "libs/material/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -301,7 +285,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": ["type:components"]
     },
     "playground": {
       "projectType": "application",
@@ -388,7 +373,8 @@
               "apps/playground/src/**/*.ts",
               "apps/playground/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -408,7 +394,8 @@
             "parallel": false
           }
         }
-      }
+      },
+      "tags": ["type:app"]
     },
     "playground-e2e": {
       "root": "apps/playground-e2e",
@@ -432,9 +419,12 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/playground-e2e/**/*.{js,ts}"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         }
-      }
+      },
+      "tags": ["type:e2e"],
+      "implicitDependencies": ["playground"]
     },
     "shared-iu": {
       "projectType": "library",
@@ -449,7 +439,8 @@
               "libs/shared/iu/src/**/*.ts",
               "libs/shared/iu/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -459,7 +450,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": ["type:ui"]
     },
     "shared-storybook": {
       "projectType": "library",
@@ -474,7 +466,8 @@
               "libs/shared/storybook/src/**/*.ts",
               "libs/shared/storybook/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -491,7 +484,8 @@
             "port": 4400,
             "config": {
               "configFolder": "libs/shared/storybook/.storybook"
-            }
+            },
+            "projectBuildConfig": "shared-storybook:build-storybook"
           },
           "configurations": {
             "ci": {
@@ -507,7 +501,8 @@
             "outputPath": "dist/storybook/shared-storybook",
             "config": {
               "configFolder": "libs/shared/storybook/.storybook"
-            }
+            },
+            "projectBuildConfig": "shared-storybook:build-storybook"
           },
           "configurations": {
             "ci": {
@@ -515,7 +510,8 @@
             }
           }
         }
-      }
+      },
+      "tags": ["type:story"]
     },
     "shared-theme": {
       "projectType": "library",
@@ -530,7 +526,8 @@
               "libs/shared/theme/src/**/*.ts",
               "libs/shared/theme/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -540,7 +537,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": ["type:assets"]
     },
     "user-service": {
       "root": "apps/user-service",
@@ -548,7 +546,7 @@
       "projectType": "application",
       "architect": {
         "build": {
-          "builder": "@nrwl/node:build",
+          "builder": "@nrwl/node:webpack",
           "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/user-service",
@@ -572,7 +570,7 @@
           }
         },
         "serve": {
-          "builder": "@nrwl/node:execute",
+          "builder": "@nrwl/node:node",
           "options": {
             "buildTarget": "user-service:build"
           }
@@ -581,7 +579,8 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/user-service/**/*.ts"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -601,7 +600,8 @@
             "parallel": false
           }
         }
-      }
+      },
+      "tags": ["type:backend"]
     }
   }
 }
