@@ -7,17 +7,18 @@ export abstract class AppInstance {
 
 @Component({
   selector: 'ballet-app-instance',
-  template: `<ballet-app-instance-container
-          *ngrxLet="appRegistration | createAppNgModuleRef: injector; let ngModuleRef"
-          [ngModuleRef]="ngModuleRef"
-          [style.min-height.px]="appRegistration.defaultHeightPx"
-  >
-      <ballet-app-intance-header
-              (removeApp)="removeApp.next()"
-              [appName]="appRegistration.name"
+  template: `
+      <ballet-app-instance-container
+              *ngrxLet="appRegistration | createAppNgModuleRef: injector; let ngModuleRef"
+              [ngModuleRef]="ngModuleRef"
+              [style.min-height.px]="appRegistration.defaultHeightPx"
       >
-      </ballet-app-intance-header>
-  </ballet-app-instance-container>
+          <ballet-app-intance-header
+                  (removeApp)="removeApp.next()"
+                  [appName]="appRegistration.name"
+          >
+          </ballet-app-intance-header>
+      </ballet-app-instance-container>
   `,
   viewProviders: [
     {
@@ -28,8 +29,9 @@ export abstract class AppInstance {
 })
 export class AppInstanceComponent {
   @Input() appRegistration: AppRegistration = {} as AppRegistration;
-  @Input() id = '';
+  @Input() id!: string;
   @Output() removeApp = new EventEmitter<void>();
 
-  constructor(readonly injector: Injector) {}
+  constructor(readonly injector: Injector) {
+  }
 }

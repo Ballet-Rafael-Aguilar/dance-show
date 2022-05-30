@@ -11,5 +11,5 @@ import { LoadableApp } from "./loadable-app";
   `,
 })
 export class AppInstanceContainerComponent {
-  @Input() ngModuleRef: NgModuleRef<LoadableApp>;
+  @Input() ngModuleRef!: NgModuleRef<LoadableApp>;
 }

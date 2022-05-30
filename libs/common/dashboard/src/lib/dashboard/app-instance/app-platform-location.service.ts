@@ -26,11 +26,15 @@ export class AppPlatformLocation implements PlatformLocation {
   }
 
   onHashChange(fn: LocationChangeListener): VoidFunction {
-    // do nothing
+    return () => {
+      // Do nothing
+    };
   }
 
   onPopState(fn: LocationChangeListener): VoidFunction {
-    // do nothing
+    return () => {
+      // Do nothing
+    };
   }
 
   pushState(state: any, title: string, url: string): void {

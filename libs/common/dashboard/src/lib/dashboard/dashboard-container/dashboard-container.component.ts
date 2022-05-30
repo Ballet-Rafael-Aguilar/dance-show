@@ -8,7 +8,8 @@ type AvailableApps = { [appName: string]: AppRegistration };
 
 @Component({
   selector: 'ballet-dashboard-container',
-  template: `<mat-drawer-container class="example-container">
+  template: `
+      <mat-drawer-container class="example-container">
       <mat-drawer mode="side" opened>
           <mat-action-list>
               <button

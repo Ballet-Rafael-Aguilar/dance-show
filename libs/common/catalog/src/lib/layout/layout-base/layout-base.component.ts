@@ -34,7 +34,7 @@ export class LayoutBaseComponent {
       {
         config: {
           id: 'home-header-button',
-          options: { text: 'Home' },
+          options: {value: { text: 'Home' }},
           click: () => {
             this.navigateTo('home');
           },
@@ -44,7 +44,7 @@ export class LayoutBaseComponent {
       {
         config: {
           id: 'contact-header-button',
-          options: { text: 'Contact' },
+          options: {value: { text: 'Contact' }},
           click: () => {
             this.navigateTo('contact');
           },
@@ -54,7 +54,7 @@ export class LayoutBaseComponent {
       {
         config: {
           id: 'about-header-button',
-          options: { text: 'About us' },
+          options: {value: { text: 'About us' }},
           click: () => {
             this.navigateTo('about');
           },
@@ -64,10 +64,10 @@ export class LayoutBaseComponent {
       {
         config: {
           id: 'theme-header-select',
-          options: [
+          options: {values: [
             { value: 'default-theme' as Theme, text: 'light' },
             { value: 'dark-theme' as Theme, text: 'dark' },
-          ],
+          ]},
           click: ($event) => {
             this.onThemeChange($event);
           },

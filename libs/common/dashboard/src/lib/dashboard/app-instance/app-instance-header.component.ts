@@ -14,6 +14,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   `,
 })
 export class AppInstanceHeaderComponent {
-  @Input() appName: string;
+  @Input() appName!: string;
   @Output() removeApp = new EventEmitter<void>();
 }
