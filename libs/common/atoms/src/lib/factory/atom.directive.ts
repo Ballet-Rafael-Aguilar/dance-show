@@ -1,6 +1,4 @@
 import {
-  ComponentFactory,
-  ComponentFactoryResolver,
   Directive,
   ElementRef,
   Input,
@@ -20,15 +18,11 @@ export class AtomDirective implements OnInit {
 
   constructor(
     private element: ElementRef,
-    private viewContainerRef: ViewContainerRef,
-    private componentFactoryResolver: ComponentFactoryResolver
+    private viewContainerRef: ViewContainerRef
   ) {}
 
   ngOnInit() {
-    const componentFactory: ComponentFactory<Atom> = this.create(
-      this.type,
-      this.componentFactoryResolver
-    );
+    const componentFactory = this.create(this.type);
     const component = this.viewContainerRef.createComponent(componentFactory);
 
     component.instance.id = this.config.id ?? 'factory-atom-' + this.type;
@@ -40,21 +34,13 @@ export class AtomDirective implements OnInit {
     }
   }
 
-  getAtom(type: AtomType, factory: ComponentFactoryResolver) {
-    if (type === 'select') {
-      return factory.resolveComponentFactory(BalletSelectComponent);
-    } else {
-      return BalletButtonComponent;
+  create = (type: AtomType) => {
+    const atoms = {
+      'select': BalletSelectComponent,
+      'button': BalletButtonComponent
     }
-  }
 
-  create = (type: AtomType, factory: ComponentFactoryResolver) => {
-    switch (type) {
-      case 'select':
-        return factory.resolveComponentFactory(BalletSelectComponent);
-      default:
-        return factory.resolveComponentFactory(BalletButtonComponent);
-    }
+    return atoms[type];
   };
 }
 

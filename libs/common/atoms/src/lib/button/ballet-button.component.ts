@@ -18,7 +18,7 @@ import { Atom, AtomOption } from '@ballet/interfaces';
 })
 export class BalletButtonComponent implements Atom {
   id: string;
-  @Input() isDisable: false;
+  @Input() isDisable = false;
   @Input() options: AtomOption;
   @Output() optionsChange = new EventEmitter<AtomOption>();
 
