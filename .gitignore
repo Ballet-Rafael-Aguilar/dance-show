@@ -41,3 +41,5 @@ Thumbs.db
 
 # VCS
 package-lock.json
+
+.angular

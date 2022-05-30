@@ -19,6 +19,7 @@
       "@ballet/common-catalog": ["libs/common/catalog/src/index.ts"],
       "@ballet/common-molecules": ["libs/common/molecules/src/index.ts"],
       "@ballet/common-rest": ["libs/common/rest/src/index.ts"],
+      "@ballet/common/dashboard": ["libs/common/dashboard/src/index.ts"],
       "@ballet/interfaces": ["libs/interface/src/index.ts"],
       "@ballet/material": ["libs/material/src/index.ts"],
       "@ballet/shared/iu": ["libs/shared/iu/src/index.ts"],

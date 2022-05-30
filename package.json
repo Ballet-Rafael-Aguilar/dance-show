@@ -29,6 +29,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-architects/module-federation": "^14.2.3",
     "@angular/animations": "13.2.7",
     "@angular/cdk": "13.2.6",
     "@angular/common": "13.2.7",
@@ -43,11 +44,19 @@
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "@ngrx/component": "^13.2.0",
+    "@ngrx/component-store": "^13.2.0",
+    "@ngrx/effects": "^13.2.0",
+    "@ngrx/router-store": "^13.2.0",
+    "@ngrx/store": "^13.2.0",
+    "@ngrx/store-devtools": "^13.2.0",
     "@nrwl/angular": "13.9.6",
+    "@types/uuid": "^8.3.4",
     "cors": "^2.8.5",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
     "tslib": "^2.0.0",
+    "uuid": "^8.3.2",
     "zone.js": "0.11.5"
   },
   "devDependencies": {
