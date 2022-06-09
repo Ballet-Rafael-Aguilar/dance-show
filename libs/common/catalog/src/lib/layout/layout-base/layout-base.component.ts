@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Theme, ThemingService } from '@ballet/shared/theme';
 import { Router } from '@angular/router';
+import { AtomType } from "../../../../../atoms/src/lib/factory/atom.directive";
+import { MatSelectChange } from "@angular/material/select";
 
 @Component({
   selector: 'ballet-layout-base',
@@ -39,7 +41,7 @@ export class LayoutBaseComponent {
             this.navigateTo('home');
           },
         },
-        type: 'button',
+        type: 'button' as AtomType,
       },
       {
         config: {
@@ -49,7 +51,7 @@ export class LayoutBaseComponent {
             this.navigateTo('contact');
           },
         },
-        type: 'button',
+        type: 'button' as AtomType,
       },
       {
         config: {
@@ -59,7 +61,7 @@ export class LayoutBaseComponent {
             this.navigateTo('about');
           },
         },
-        type: 'button',
+        type: 'button' as AtomType,
       },
       {
         config: {
@@ -68,11 +70,11 @@ export class LayoutBaseComponent {
             { value: 'default-theme' as Theme, text: 'light' },
             { value: 'dark-theme' as Theme, text: 'dark' },
           ]},
-          click: ($event) => {
+          click: ($event: MatSelectChange) => {
             this.onThemeChange($event);
           },
         },
-        type: 'select',
+        type: 'select'  as AtomType,
       },
     ];
 
@@ -83,7 +85,7 @@ export class LayoutBaseComponent {
     this.router.navigate([section]);
   }
 
-  onThemeChange($event) {
+  onThemeChange($event: MatSelectChange) {
     this.themingService.setTheme($event.value);
   }
 }

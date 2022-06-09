@@ -11,7 +11,7 @@ export const AvailableApps = (isProduction = false): AppRegistration[] => [
         exposedModule: './Module',
         remoteEntry: isProduction
           ? '/remoteEntry.js'
-          : 'http://localhost:4004/remoteEntry.js',
+          : 'http://localhost:4004',
       }).then((m) => m.MfeAppModule),
     defaultHeightPx: 750,
   },

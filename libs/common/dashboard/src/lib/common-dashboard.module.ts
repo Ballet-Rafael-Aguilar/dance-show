@@ -1,8 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { CommonMoleculesModule } from '@ballet/common-molecules';
 import { Route, RouterModule } from '@angular/router';
 import { DashboardContainerComponent } from './dashboard/dashboard-container/dashboard-container.component';
-import { CommonModule } from "@angular/common";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { StoreModule } from "@ngrx/store";
 import { reducers } from "./dashboard/reducers";
@@ -15,6 +13,7 @@ import { LoadableApp } from "./dashboard/app-instance/loadable-app";
 import { AVAILABLE_APPS } from "../tokens";
 import { AvailableApps } from "./dashboard/app-instance/available-apps";
 import { ReactiveComponentModule } from "@ngrx/component";
+import { CommonCatalogModule } from "@ballet/common-catalog";
 
 const routes: Route[] = [
   {
@@ -33,11 +32,12 @@ const routes: Route[] = [
     RenderAppDirective
   ],
   exports: [
-    CommonMoleculesModule,
+    CommonCatalogModule,
     RouterModule,
     RenderAppDirective
   ],
-  imports: [CommonMoleculesModule, CommonModule,
+  imports: [
+    CommonCatalogModule,
     StoreModule.forRoot(reducers, {
       runtimeChecks: {
         strictStateImmutability: true,

@@ -6,7 +6,7 @@ import { LoadableApp } from "./loadable-app";
   template: `
       <ng-content select="angular-dream-app-header"></ng-content>
       <div class="app-body">
-          <ng-container *renderApp="ngModuleRef"></ng-container>
+          <ng-container *balletRenderApp="ngModuleRef"></ng-container>
       </div>
   `,
 })
