@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Theme, ThemingService } from '@ballet/shared/theme';
 import { Router } from '@angular/router';
+import { AtomType } from "../../../../../atoms/src/lib/factory/atom.directive";
+import { MatSelectChange } from "@angular/material/select";
 
 @Component({
   selector: 'ballet-layout-base',
@@ -34,45 +36,45 @@ export class LayoutBaseComponent {
       {
         config: {
           id: 'home-header-button',
-          options: { text: 'Home' },
+          options: {value: { text: 'Home' }},
           click: () => {
             this.navigateTo('home');
           },
         },
-        type: 'button',
+        type: 'button' as AtomType,
       },
       {
         config: {
           id: 'contact-header-button',
-          options: { text: 'Contact' },
+          options: {value: { text: 'Contact' }},
           click: () => {
             this.navigateTo('contact');
           },
         },
-        type: 'button',
+        type: 'button' as AtomType,
       },
       {
         config: {
           id: 'about-header-button',
-          options: { text: 'About us' },
+          options: {value: { text: 'About us' }},
           click: () => {
             this.navigateTo('about');
           },
         },
-        type: 'button',
+        type: 'button' as AtomType,
       },
       {
         config: {
           id: 'theme-header-select',
-          options: [
+          options: {values: [
             { value: 'default-theme' as Theme, text: 'light' },
             { value: 'dark-theme' as Theme, text: 'dark' },
-          ],
-          click: ($event) => {
+          ]},
+          click: ($event: MatSelectChange) => {
             this.onThemeChange($event);
           },
         },
-        type: 'select',
+        type: 'select'  as AtomType,
       },
     ];
 
@@ -83,7 +85,7 @@ export class LayoutBaseComponent {
     this.router.navigate([section]);
   }
 
-  onThemeChange($event) {
+  onThemeChange($event: MatSelectChange) {
     this.themingService.setTheme($event.value);
   }
 }

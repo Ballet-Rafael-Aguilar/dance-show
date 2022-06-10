@@ -13,8 +13,8 @@ import { BalletButtonComponent } from '../button/ballet-button.component';
   selector: '[balletAtom]',
 })
 export class AtomDirective implements OnInit {
-  @Input() type: AtomType;
-  @Input() config: Atom;
+  @Input() type: AtomType = {} as AtomType;
+  @Input() config: Atom = {} as Atom;
 
   constructor(
     private element: ElementRef,
@@ -27,8 +27,12 @@ export class AtomDirective implements OnInit {
 
     component.instance.id = this.config.id ?? 'factory-atom-' + this.type;
     component.instance.isDisable = this.config.isDisable ?? false;
-    component.instance.optionsChange = this.config.optionsChange ?? null;
-    component.instance.options = this.config.options ?? null;
+    if(this.config.optionsChange){
+      component.instance.optionsChange = this.config.optionsChange;
+    }
+    if(this.config.options){
+      component.instance.options = this.config.options;
+    }
     if (this.config.click) {
       component.instance.click = this.config.click;
     }
