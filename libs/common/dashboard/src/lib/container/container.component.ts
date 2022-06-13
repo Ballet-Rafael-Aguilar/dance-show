@@ -5,7 +5,7 @@ import { ThemingService } from "@ballet/shared/theme";
 @Component({
   selector: 'ballet-container',
   template: `
-      <div [ngClass]="(selectedTheme$ | async) ?? ''">
+      <div [ngClass]="(selectedTheme$ | async) ?? 'default-theme'">
           <ballet-layout-base></ballet-layout-base>
       </div>`,
 })
