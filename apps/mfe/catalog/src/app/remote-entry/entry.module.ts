@@ -5,7 +5,6 @@ import { RemoteEntryComponent } from './entry.component';
 import { SharedIuModule } from "@ballet/shared/iu";
 
 @NgModule({
-  exports: [SharedIuModule],
   declarations: [RemoteEntryComponent],
   imports: [
     SharedIuModule,

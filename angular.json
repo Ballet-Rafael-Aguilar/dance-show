@@ -57,6 +57,32 @@
       },
       "tags": ["type:lib"]
     },
+    "common-dashboard": {
+      "projectType": "library",
+      "root": "libs/common/dashboard",
+      "sourceRoot": "libs/common/dashboard/src",
+      "prefix": "ballet",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/dashboard"],
+          "options": {
+            "jestConfig": "libs/common/dashboard/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/dashboard/**/*.ts",
+              "libs/common/dashboard/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "common-molecules": {
       "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "projectType": "library",
