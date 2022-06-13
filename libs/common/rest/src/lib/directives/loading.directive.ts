@@ -42,8 +42,8 @@ export class LoadingDirective implements OnChanges {
       this.init();
     }
 
-    if (changes.isLoading) {
-      const isLoadingValue = changes.isLoading.currentValue;
+    if (changes['isLoading']) {
+      const isLoadingValue = changes['isLoading'].currentValue;
 
       if (isLoadingValue) {
         this.addLoadingIndicator();
@@ -72,11 +72,8 @@ export class LoadingDirective implements OnChanges {
   }
 
   protected initSpinnerComponent(): void {
-    const spinnerComponentFactory = this.componentFactoryResolver.resolveComponentFactory(
-      SpinnerComponent
-    );
     const spinnerComponent = this.viewContainerRef.createComponent(
-      spinnerComponentFactory
+      SpinnerComponent
     );
     this.spinnerElement = spinnerComponent.location.nativeElement;
   }
