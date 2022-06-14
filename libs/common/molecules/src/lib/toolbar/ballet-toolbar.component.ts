@@ -33,9 +33,9 @@ import { CommonComponents } from '@ballet/interfaces';
 })
 export class BalletToolbarComponent {
   @ContentChild('menu', { read: TemplateRef })
-  menu: TemplateRef<CommonComponents>;
+  menu!: TemplateRef<CommonComponents>;
   @ContentChild('sideMenu', { read: TemplateRef })
-  sideMenu: TemplateRef<CommonComponents>;
+  sideMenu!: TemplateRef<CommonComponents>;
   @ContentChild('content', { read: TemplateRef })
-  content: TemplateRef<CommonComponents>;
+  content!: TemplateRef<CommonComponents>;
 }

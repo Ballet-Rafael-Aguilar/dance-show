@@ -2,6 +2,7 @@
   "version": 1,
   "projects": {
     "common-atoms": {
+      "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "projectType": "library",
       "root": "libs/common/atoms",
       "sourceRoot": "libs/common/atoms/src",
@@ -21,7 +22,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/common/atoms"],
           "options": {
-            "jestConfig": "libs/common/atoms/jest.config.js",
+            "jestConfig": "libs/common/atoms/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -29,6 +30,7 @@
       "tags": ["type:components"]
     },
     "common-catalog": {
+      "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "projectType": "library",
       "root": "libs/common/catalog",
       "sourceRoot": "libs/common/catalog/src",
@@ -48,14 +50,41 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/common/catalog"],
           "options": {
-            "jestConfig": "libs/common/catalog/jest.config.js",
+            "jestConfig": "libs/common/catalog/jest.config.ts",
             "passWithNoTests": true
           }
         }
       },
       "tags": ["type:lib"]
     },
+    "common-dashboard": {
+      "projectType": "library",
+      "root": "libs/common/dashboard",
+      "sourceRoot": "libs/common/dashboard/src",
+      "prefix": "ballet",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/dashboard"],
+          "options": {
+            "jestConfig": "libs/common/dashboard/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/dashboard/**/*.ts",
+              "libs/common/dashboard/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "common-molecules": {
+      "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "projectType": "library",
       "root": "libs/common/molecules",
       "sourceRoot": "libs/common/molecules/src",
@@ -75,7 +104,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/common/molecules"],
           "options": {
-            "jestConfig": "libs/common/molecules/jest.config.js",
+            "jestConfig": "libs/common/molecules/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -83,6 +112,7 @@
       "tags": ["type:components"]
     },
     "common-rest": {
+      "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "projectType": "library",
       "root": "libs/common/rest",
       "sourceRoot": "libs/common/rest/src",
@@ -102,7 +132,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/common/rest"],
           "options": {
-            "jestConfig": "libs/common/rest/jest.config.js",
+            "jestConfig": "libs/common/rest/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -110,6 +140,7 @@
       "tags": ["type:lib"]
     },
     "dance-show": {
+      "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "projectType": "application",
       "root": "apps/dance-show",
       "sourceRoot": "apps/dance-show/src",
@@ -198,7 +229,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/dance-show"],
           "options": {
-            "jestConfig": "apps/dance-show/jest.config.js",
+            "jestConfig": "apps/dance-show/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -206,6 +237,7 @@
       "tags": ["type:app"]
     },
     "dance-show-e2e": {
+      "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "root": "apps/dance-show-e2e",
       "sourceRoot": "apps/dance-show-e2e/src",
       "projectType": "application",
@@ -235,6 +267,7 @@
       "implicitDependencies": ["dance-show"]
     },
     "interface": {
+      "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "projectType": "library",
       "root": "libs/interface",
       "sourceRoot": "libs/interface/src",
@@ -254,7 +287,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/interface"],
           "options": {
-            "jestConfig": "libs/interface/jest.config.js",
+            "jestConfig": "libs/interface/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -262,6 +295,7 @@
       "tags": ["type:interface"]
     },
     "material": {
+      "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "projectType": "library",
       "root": "libs/material",
       "sourceRoot": "libs/material/src",
@@ -281,14 +315,295 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/material"],
           "options": {
-            "jestConfig": "libs/material/jest.config.js",
+            "jestConfig": "libs/material/jest.config.ts",
             "passWithNoTests": true
           }
         }
       },
       "tags": ["type:components"]
     },
+    "mfe-catalog": {
+      "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+      "projectType": "application",
+      "root": "apps/mfe/catalog",
+      "sourceRoot": "apps/mfe/catalog/src",
+      "prefix": "ballet",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:webpack-browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/mfe/catalog",
+            "index": "apps/mfe/catalog/src/index.html",
+            "main": "apps/mfe/catalog/src/main.ts",
+            "polyfills": "apps/mfe/catalog/src/polyfills.ts",
+            "tsConfig": "apps/mfe/catalog/tsconfig.app.json",
+            "assets": [
+              "apps/mfe/catalog/src/favicon.ico",
+              "apps/mfe/catalog/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/theme/assets"]
+            },
+            "styles": ["apps/mfe/catalog/src/styles.scss"],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "apps/mfe/catalog/webpack.config.js"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/mfe/catalog/src/environments/environment.ts",
+                  "with": "apps/mfe/catalog/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "customWebpackConfig": {
+                "path": "apps/mfe/catalog/webpack.prod.config.js"
+              }
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@nrwl/angular:webpack-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "mfe-catalog:build:production"
+            },
+            "development": {
+              "browserTarget": "mfe-catalog:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4202,
+            "publicHost": "http://localhost:4202"
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mfe-catalog:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/mfe/catalog/src/**/*.ts",
+              "apps/mfe/catalog/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/mfe/catalog"],
+          "options": {
+            "jestConfig": "apps/mfe/catalog/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "mfe-catalog-e2e": {
+      "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+      "root": "apps/mfe-catalog-e2e",
+      "sourceRoot": "apps/mfe-catalog-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/mfe-catalog-e2e/cypress.json",
+            "devServerTarget": "mfe-catalog:serve:development",
+            "tsConfig": "apps/mfe-catalog-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mfe-catalog:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/mfe-catalog-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["mfe-catalog"]
+    },
+    "mfe-dashboard": {
+      "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+      "projectType": "application",
+      "root": "apps/mfe/dashboard",
+      "sourceRoot": "apps/mfe/dashboard/src",
+      "prefix": "ballet",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:webpack-browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/mfe/dashboard",
+            "index": "apps/mfe/dashboard/src/index.html",
+            "main": "apps/mfe/dashboard/src/main.ts",
+            "polyfills": "apps/mfe/dashboard/src/polyfills.ts",
+            "tsConfig": "apps/mfe/dashboard/tsconfig.app.json",
+            "assets": [
+              "apps/mfe/dashboard/src/favicon.ico",
+              "apps/mfe/dashboard/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/theme/assets"]
+            },
+            "styles": ["apps/mfe/catalog/src/styles.scss"],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "apps/mfe/dashboard/webpack.config.js"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/mfe/dashboard/src/environments/environment.ts",
+                  "with": "apps/mfe/dashboard/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "customWebpackConfig": {
+                "path": "apps/mfe/dashboard/webpack.prod.config.js"
+              }
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@nrwl/angular:webpack-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "mfe-dashboard:build:production"
+            },
+            "development": {
+              "browserTarget": "mfe-dashboard:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4201,
+            "publicHost": "http://localhost:4201"
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mfe-dashboard:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/mfe/dashboard/src/**/*.ts",
+              "apps/mfe/dashboard/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/mfe/dashboard"],
+          "options": {
+            "jestConfig": "apps/mfe/dashboard/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "serve-mfe": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": ["nx serve mfe-catalog", "nx serve mfe-dashboard"]
+          }
+        }
+      },
+      "tags": []
+    },
+    "mfe-dashboard-e2e": {
+      "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+      "root": "apps/mfe-dashboard-e2e",
+      "sourceRoot": "apps/mfe-dashboard-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/mfe-dashboard-e2e/cypress.json",
+            "devServerTarget": "mfe-dashboard:serve:development",
+            "tsConfig": "apps/mfe-dashboard-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mfe-dashboard:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/mfe-dashboard-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["mfe-dashboard"]
+    },
     "playground": {
+      "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "projectType": "application",
       "root": "apps/playground",
       "sourceRoot": "apps/playground/src",
@@ -380,7 +695,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/playground"],
           "options": {
-            "jestConfig": "apps/playground/jest.config.js",
+            "jestConfig": "apps/playground/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -398,6 +713,7 @@
       "tags": ["type:app"]
     },
     "playground-e2e": {
+      "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "root": "apps/playground-e2e",
       "sourceRoot": "apps/playground-e2e/src",
       "projectType": "application",
@@ -427,6 +743,7 @@
       "implicitDependencies": ["playground"]
     },
     "shared-iu": {
+      "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "projectType": "library",
       "root": "libs/shared/iu",
       "sourceRoot": "libs/shared/iu/src",
@@ -446,7 +763,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/shared/iu"],
           "options": {
-            "jestConfig": "libs/shared/iu/jest.config.js",
+            "jestConfig": "libs/shared/iu/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -454,6 +771,7 @@
       "tags": ["type:ui"]
     },
     "shared-storybook": {
+      "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "projectType": "library",
       "root": "libs/shared/storybook",
       "sourceRoot": "libs/shared/storybook/src",
@@ -473,19 +791,17 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/shared/storybook"],
           "options": {
-            "jestConfig": "libs/shared/storybook/jest.config.js",
+            "jestConfig": "libs/shared/storybook/jest.config.ts",
             "passWithNoTests": true
           }
         },
         "storybook": {
-          "builder": "@nrwl/storybook:storybook",
+          "builder": "@storybook/angular:start-storybook",
           "options": {
-            "uiFramework": "@storybook/angular",
             "port": 4400,
-            "config": {
-              "configFolder": "libs/shared/storybook/.storybook"
-            },
-            "projectBuildConfig": "shared-storybook:build-storybook"
+            "configDir": "libs/shared/storybook/.storybook",
+            "browserTarget": "shared-storybook:build-storybook",
+            "compodoc": false
           },
           "configurations": {
             "ci": {
@@ -494,15 +810,13 @@
           }
         },
         "build-storybook": {
-          "builder": "@nrwl/storybook:build",
+          "builder": "@storybook/angular:build-storybook",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "uiFramework": "@storybook/angular",
-            "outputPath": "dist/storybook/shared-storybook",
-            "config": {
-              "configFolder": "libs/shared/storybook/.storybook"
-            },
-            "projectBuildConfig": "shared-storybook:build-storybook"
+            "outputDir": "dist/storybook/shared-storybook",
+            "configDir": "libs/shared/storybook/.storybook",
+            "browserTarget": "shared-storybook:build-storybook",
+            "compodoc": false
           },
           "configurations": {
             "ci": {
@@ -514,6 +828,7 @@
       "tags": ["type:story"]
     },
     "shared-theme": {
+      "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "projectType": "library",
       "root": "libs/shared/theme",
       "sourceRoot": "libs/shared/theme/src",
@@ -533,7 +848,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/shared/theme"],
           "options": {
-            "jestConfig": "libs/shared/theme/jest.config.js",
+            "jestConfig": "libs/shared/theme/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -541,6 +856,7 @@
       "tags": ["type:assets"]
     },
     "user-service": {
+      "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
       "root": "apps/user-service",
       "sourceRoot": "apps/user-service/src",
       "projectType": "application",
@@ -586,7 +902,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/user-service"],
           "options": {
-            "jestConfig": "apps/user-service/jest.config.js",
+            "jestConfig": "apps/user-service/jest.config.ts",
             "passWithNoTests": true
           }
         },

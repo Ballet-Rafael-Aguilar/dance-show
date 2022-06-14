@@ -11,15 +11,15 @@ import { Atom, AtomOption } from '@ballet/interfaces';
       color="primary"
       (click)="click()"
     >
-      {{ options?.text }}
+      {{ options.value?.text }}
       <ng-content></ng-content>
     </button>
   `,
 })
 export class BalletButtonComponent implements Atom {
-  id: string;
+  @Input() id!: string;
   @Input() isDisable = false;
-  @Input() options: AtomOption;
+  @Input() options: AtomOption = {} as AtomOption;
   @Output() optionsChange = new EventEmitter<AtomOption>();
 
   click(): void {

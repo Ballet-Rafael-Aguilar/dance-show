@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonCatalogModule } from '@ballet/common-catalog';
 import { CommonRestModule } from '@ballet/common-rest';
+import { CommonDashboardModule } from "@ballet/common/dashboard";
 
 @NgModule({
-  imports: [CommonCatalogModule, CommonRestModule],
-  exports: [CommonCatalogModule, CommonRestModule],
+  imports: [CommonDashboardModule, CommonRestModule],
+  exports: [CommonDashboardModule, CommonRestModule],
 })
 export class SharedIuModule {}
