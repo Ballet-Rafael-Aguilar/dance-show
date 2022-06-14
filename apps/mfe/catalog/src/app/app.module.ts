@@ -18,7 +18,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([], { initialNavigation: 'enabledBlocking' }),
-
   ],
   providers: [],
   bootstrap: [AppComponent],

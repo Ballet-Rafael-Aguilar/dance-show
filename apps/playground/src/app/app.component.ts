@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ThemingService } from '../../../../libs/shared/theme/src/lib/theming.service';
+import { ThemingService } from '@ballet/shared/theme';
 
 @Component({
   selector: 'ballet-root',
