@@ -342,7 +342,10 @@
               "apps/mfe/catalog/src/favicon.ico",
               "apps/mfe/catalog/src/assets"
             ],
-            "styles": ["apps/mfe/catalog/src/styles.css"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/theme/assets"]
+            },
+            "styles": ["apps/mfe/catalog/src/styles.scss"],
             "scripts": [],
             "customWebpackConfig": {
               "path": "apps/mfe/catalog/webpack.config.js"
@@ -476,7 +479,10 @@
               "apps/mfe/dashboard/src/favicon.ico",
               "apps/mfe/dashboard/src/assets"
             ],
-            "styles": ["apps/mfe/dashboard/src/styles.css"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/theme/assets"]
+            },
+            "styles": ["apps/mfe/catalog/src/styles.scss"],
             "scripts": [],
             "customWebpackConfig": {
               "path": "apps/mfe/dashboard/webpack.config.js"

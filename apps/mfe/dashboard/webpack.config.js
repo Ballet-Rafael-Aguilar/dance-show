@@ -44,9 +44,9 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      remotes: {
-        'mfe-catalog': 'http://localhost:4202/remoteEntry.js',
-      },
+      remotes: [
+        {'mfe-catalog': 'http://localhost:4202/remoteEntry.js'}
+      ],
       shared: share({
         '@angular/core': {
           singleton: true,
