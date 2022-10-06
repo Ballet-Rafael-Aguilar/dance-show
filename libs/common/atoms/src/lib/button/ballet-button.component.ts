@@ -4,16 +4,12 @@ import { Atom, AtomOption } from '@ballet/interfaces';
 @Component({
   selector: 'ballet-button',
   template: `
-    <button
-      [id]="id"
-      [disabled]="isDisable"
-      mat-button
-      color="primary"
-      (click)="click()"
-    >
-      {{ options.value?.text }}
-      <ng-content></ng-content>
-    </button>
+      <button [id]="id" [disabled]="isDisable"
+              mat-button color="primary"
+              (click)="click()">
+          {{ options.value?.text }}
+          <ng-content></ng-content>
+      </button>
   `,
 })
 export class BalletButtonComponent implements Atom {

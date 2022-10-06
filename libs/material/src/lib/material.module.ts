@@ -7,7 +7,14 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatListModule } from "@angular/material/list";
 
 @NgModule({
-  exports: [MatIconModule, MatButtonModule, MatSidenavModule, MatToolbarModule, MatSelectModule, MatListModule]
+  exports: [
+    MatIconModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatListModule
+  ]
 })
 export class MaterialModule {
 }
