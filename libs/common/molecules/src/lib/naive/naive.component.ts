@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AbstractAtomDirective } from "../../../../atoms/src/lib/atom/atom.directive";
 
 @Component({
   selector: 'ballet-naive',
@@ -6,6 +7,6 @@ import { Component, Input } from '@angular/core';
       Naive Component
   `
 })
-export class NaiveComponent {
+export class NaiveComponent extends AbstractAtomDirective {
   @Input() id!: string;
 }

@@ -5,8 +5,8 @@ import { Router } from "@angular/router";
 import { MatSelectChange } from "@angular/material/select";
 import { Atom } from "@ballet/interfaces";
 import { Molecule } from "../../../../../interface/src/lib/interfaces/molecules.interface";
-import { MoleculeType } from "../../../../molecules/src/lib/factory/molecule.directive";
 import { ATOMS } from "../../../../atoms/src/lib/factory/atom-factory.directive";
+import { MOLECULES } from "../../../../molecules/src/lib/factory/molecule.directive";
 
 @Component({
   selector: 'ballet-container',
@@ -18,7 +18,7 @@ import { ATOMS } from "../../../../atoms/src/lib/factory/atom-factory.directive"
 export class ContainerComponent implements OnInit {
   selectedTheme$!: Observable<string>;
   components!: { config: Atom, type: ATOMS }[];
-  content!: { config: Molecule, type: MoleculeType }[];
+  content!: { config: Molecule, type: MOLECULES }[];
   themeSelected;
 
   constructor(private themingService: ThemingService, private readonly router: Router) {
@@ -75,7 +75,7 @@ export class ContainerComponent implements OnInit {
         config: {
           id: 'about-header-button',
         },
-        type: 'naive' as MoleculeType,
+        type: 'naive',
       },
     ]
 
@@ -86,11 +86,11 @@ export class ContainerComponent implements OnInit {
     this.selectedTheme$ = this.themingService.selected;
   }
 
-  navigateTo(section: string) {
+  navigateTo(section: string): void {
     this.router.navigate([section]);
   }
 
-  onThemeChange($event: MatSelectChange) {
+  onThemeChange($event: MatSelectChange): void {
     this.themingService.setTheme($event.value);
   }
 }

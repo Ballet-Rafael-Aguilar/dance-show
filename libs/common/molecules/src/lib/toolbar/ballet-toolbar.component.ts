@@ -1,5 +1,6 @@
 import { Component, ContentChild, Input, TemplateRef } from '@angular/core';
 import { CommonComponents } from '@ballet/interfaces';
+import { AbstractAtomDirective } from "../../../../atoms/src/lib/atom/atom.directive";
 
 @Component({
   selector: 'ballet-toolbar',
@@ -30,7 +31,7 @@ import { CommonComponents } from '@ballet/interfaces';
       </mat-sidenav-container>
   `,
 })
-export class BalletToolbarComponent {
+export class BalletToolbarComponent extends AbstractAtomDirective {
   @Input() id!: string;
   @ContentChild('menu', {read: TemplateRef}) menu!: TemplateRef<CommonComponents>;
   @ContentChild('sideMenu', {read: TemplateRef}) sideMenu!: TemplateRef<CommonComponents>;

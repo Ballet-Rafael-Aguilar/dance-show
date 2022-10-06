@@ -29,7 +29,7 @@ export class AtomFactoryDirective implements OnInit, OnChanges {
   }
 }
 
-const ATOM = {
+export const ATOM = {
   'select': BalletSelectComponent,
   'button': BalletButtonComponent
 };
