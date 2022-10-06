@@ -9,7 +9,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 })
 export class AtomFactoryDirective implements OnInit, OnChanges {
   @Input() balletAtom!: ATOMS;
-  @Input() config: Atom = {id: 'factory-atom-'};
+  @Input() config: Atom = {id: 'factory-atom-default'};
 
   configSubject: BehaviorSubject<Atom> = new BehaviorSubject<Atom>({id: 'factory-atom-'});
   config$: Observable<Atom> = this.configSubject.asObservable();

@@ -3,7 +3,7 @@ import { BalletToolbarComponent } from "../toolbar/ballet-toolbar.component";
 import { NaiveComponent } from "../naive/naive.component";
 import { Molecule } from "../../../../../interface/src/lib/interfaces/molecules.interface";
 import { ATOM, ATOMS } from "../../../../atoms/src/lib/factory/atom-factory.directive";
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 import { Atom } from "@ballet/interfaces";
 
 @Directive({
@@ -11,10 +11,10 @@ import { Atom } from "@ballet/interfaces";
 })
 export class MoleculeDirective implements OnInit, OnChanges {
   @Input() balletMolecule!: MOLECULES;
-  @Input() config!: Molecule;
+  @Input() config!: Molecule | Atom;
 
-  configSubject: BehaviorSubject<Molecule | Atom> = new BehaviorSubject<Molecule | Atom>({id: 'factory-molecule-'});
-  config$: Observable<Molecule | Atom> = this.configSubject.asObservable();
+  configSubject = new BehaviorSubject<Molecule | Atom>({id: 'factory-molecule-default'});
+  config$ = this.configSubject.asObservable();
 
   constructor(private viewContainerRef: ViewContainerRef) {
   }

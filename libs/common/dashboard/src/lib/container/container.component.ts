@@ -18,7 +18,7 @@ import { MOLECULES } from "../../../../molecules/src/lib/factory/molecule.direct
 export class ContainerComponent implements OnInit {
   selectedTheme$!: Observable<string>;
   components!: { config: Atom, type: ATOMS }[];
-  content!: { config: Molecule, type: MOLECULES }[];
+  content!: { config: Molecule | Atom, type: MOLECULES }[];
   themeSelected;
 
   constructor(private themingService: ThemingService, private readonly router: Router) {
@@ -73,10 +73,20 @@ export class ContainerComponent implements OnInit {
     this.content = [
       {
         config: {
-          id: 'about-header-button',
+          id: 'naive-component',
         },
         type: 'naive',
       },
+      {
+        config: {
+          id: 'random-body-button',
+          options: {value: {text: 'Body button'}},
+          click: () => {
+            console.log('Click!')
+          },
+        },
+        type: 'button',
+      }
     ]
 
     this.themeSelected = {value: 'default-theme' as Theme, text: 'light'};
