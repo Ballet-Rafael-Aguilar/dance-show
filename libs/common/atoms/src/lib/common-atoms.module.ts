@@ -4,15 +4,19 @@ import { BalletButtonComponent } from './button/ballet-button.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '@ballet/material';
 import { BalletSelectComponent } from './select/ballet-select.component';
-import { AtomDirective } from './factory/atom.directive';
+import { AtomFactoryDirective } from './factory/atom-factory.directive';
 
 @NgModule({
   imports: [CommonModule, MaterialModule],
-  declarations: [BalletButtonComponent, BalletSelectComponent, AtomDirective],
+  declarations: [
+    BalletButtonComponent,
+    BalletSelectComponent,
+    AtomFactoryDirective
+  ],
   exports: [
     BalletButtonComponent,
     BalletSelectComponent,
-    AtomDirective,
+    AtomFactoryDirective,
     CommonModule,
     FlexLayoutModule,
     MaterialModule,

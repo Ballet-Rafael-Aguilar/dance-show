@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Atom } from "@ballet/interfaces";
-import { AtomType } from "../../../../../atoms/src/lib/factory/atom.directive";
 import { Molecule } from "../../../../../../interface/src/lib/interfaces/molecules.interface";
 import { MoleculeType } from "../../../../../molecules/src/lib/factory/molecule.directive";
+import { ATOMS } from "../../../../../atoms/src/lib/factory/atom-factory.directive";
 
 @Component({
   selector: 'ballet-layout-base',
@@ -10,7 +10,7 @@ import { MoleculeType } from "../../../../../molecules/src/lib/factory/molecule.
       <ballet-toolbar>
           <ng-template #menu #sideMenu>
               <ng-container *ngFor="let component of components">
-                  <ng-container balletAtom [type]="component.type" [config]="component.config">
+                  <ng-container [balletAtom]="component.type" [config]="component.config">
                   </ng-container>
               </ng-container>
           </ng-template>
@@ -26,7 +26,7 @@ import { MoleculeType } from "../../../../../molecules/src/lib/factory/molecule.
 })
 export class LayoutBaseComponent {
   @Input() id!: string;
-  @Input() components!: { config: Atom, type: AtomType }[];
+  @Input() components!: { config: Atom, type: ATOMS }[];
   @Input() contents!: { config: Molecule, type: MoleculeType }[];
 
   title = 'playground';

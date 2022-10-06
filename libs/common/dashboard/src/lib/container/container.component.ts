@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs";
 import { Theme, ThemingService } from "@ballet/shared/theme";
 import { Router } from "@angular/router";
-import { AtomType } from "../../../../atoms/src/lib/factory/atom.directive";
 import { MatSelectChange } from "@angular/material/select";
 import { Atom } from "@ballet/interfaces";
 import { Molecule } from "../../../../../interface/src/lib/interfaces/molecules.interface";
 import { MoleculeType } from "../../../../molecules/src/lib/factory/molecule.directive";
+import { ATOMS } from "../../../../atoms/src/lib/factory/atom-factory.directive";
 
 @Component({
   selector: 'ballet-container',
@@ -17,7 +17,7 @@ import { MoleculeType } from "../../../../molecules/src/lib/factory/molecule.dir
 })
 export class ContainerComponent implements OnInit {
   selectedTheme$!: Observable<string>;
-  components!: { config:Atom, type: AtomType }[];
+  components!: { config: Atom, type: ATOMS }[];
   content!: { config: Molecule, type: MoleculeType }[];
   themeSelected;
 
@@ -31,7 +31,7 @@ export class ContainerComponent implements OnInit {
             this.navigateTo('home');
           },
         },
-        type: 'button' as AtomType,
+        type: 'button',
       },
       {
         config: {
@@ -41,7 +41,7 @@ export class ContainerComponent implements OnInit {
             this.navigateTo('contact');
           },
         },
-        type: 'button' as AtomType,
+        type: 'button',
       },
       {
         config: {
@@ -51,7 +51,7 @@ export class ContainerComponent implements OnInit {
             this.navigateTo('about');
           },
         },
-        type: 'button' as AtomType,
+        type: 'button',
       },
       {
         config: {
@@ -66,7 +66,7 @@ export class ContainerComponent implements OnInit {
             this.onThemeChange($event);
           },
         },
-        type: 'select' as AtomType,
+        type: 'select',
       },
     ];
 
