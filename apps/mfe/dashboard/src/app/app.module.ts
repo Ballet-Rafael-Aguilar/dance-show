@@ -14,14 +14,14 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
       [
         {
           path: 'mfe-catalog',
-          loadChildren: () =>
-            import('mfe-catalog/Module').then((m) => m.RemoteEntryModule),
+          loadChildren: () => import('mfe-catalog/Module').then((m) => m.RemoteEntryModule),
         },
       ],
-      { initialNavigation: 'enabledBlocking' }
+      {initialNavigation: 'enabledBlocking'}
     ),
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
